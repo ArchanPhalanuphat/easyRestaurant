@@ -1,0 +1,2 @@
+#hihihihhihii
+print("narakjang")
