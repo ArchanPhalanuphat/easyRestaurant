@@ -1,5 +1,6 @@
 from django.shortcuts import render
-
+from django.http import HttpResponse
 # Create your views here.
 
-# anaphat testๆ
+def page_first(request):
+    return render(request, 'page_first.html')
