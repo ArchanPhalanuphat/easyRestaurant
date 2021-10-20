@@ -20,4 +20,5 @@ from easyRestaurant_web import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.page_first),
+    path('test/', views.page_test)
 ]

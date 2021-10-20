@@ -4,3 +4,7 @@ from django.http import HttpResponse
 
 def page_first(request):
     return render(request, 'page_first.html')
+
+def page_test(request):
+    return render(request, 'test.html')
+
