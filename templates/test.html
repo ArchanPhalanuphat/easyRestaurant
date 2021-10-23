@@ -11,11 +11,35 @@
         .heading-text {
               color: #704E3D;
             }
+        .button {
+            background-color: #C1AA8D;
+            border: none;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            margin: 2px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+            }
+        footer {
+            text-align: center;
+            padding: 3px;
+            background-color: #C1AA8D;
+            color: #704E3D;
+            height: 100%;
+            }
+        body {
+            height: 60px;
+        }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg " style="background-color:#C1AA8D; ">
-        <div class="row container-fluid">
+    <!--หัวข้อ-->
+    <nav class="row navbar navbar-expand-lg " style="background-color:#C1AA8D; ">
+        <div class="container-fluid">
             <div class="col-lg-4">
                 <div class="row">
                     <div class="col-lg-1">
@@ -29,53 +53,132 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-8">
-                <div class="row ">
-                    <ul class="nav nav-pills justify-content-end">
-                        <li class="nav-item"><a href="#" class="navbar-brand heading-text">&nbsp Menu</a></li>
-                        <li class="nav-item"><a href="#" class="navbar-brand heading-text">&nbsp Reservation</a></li>
-                        <li class="nav-item"><a href="#" class="navbar-brand heading-text">&nbsp Contact</a></li>
-                        <li class="nav-item"><a href="#" class="navbar-brand heading-text">&nbsp Paymant &nbsp</a></li>
-                        <div class="col-lg-1">
-                            <a class="" href="#"><i class="fa fa-search fa-2x" style="color:#704E3D;"></i></a>
-                        </div>
-                        <div class="col-lg-1">
-                            <a class="" href="#"> <i class="fa fa-shopping-cart fa-2x" style="color:#704E3D;"></i></a>
-                        </div>
-                        <div class="col-lg-1">
-                            <a class="" href="#"> <i class="fa fa-user fa-2x" style="color:#704E3D;"></i></a>
-                        </div>
-                    </ul>
+            <div class="col-lg-6">
+                <div class="row">
+                        <ul class="nav nav-pills justify-content-end">
+                                <li class="nav-item"><a href="#" class="navbar-brand heading-text">&nbsp Menu</a></li>
+                                <li class="nav-item"><a href="#" class="navbar-brand heading-text">&nbsp Reservation</a></li>
+                                <li class="nav-item"><a href="#" class="navbar-brand heading-text">&nbsp Contact</a></li>
+                                <li class="nav-item"><a href="#" class="navbar-brand heading-text">&nbsp Paymant</a></li>
+                                <li class="nav-item"><a class="" href="#"><i class="fa fa-search fa-2x" style="color:#704E3D;"></i></a></li>
+                                <li class="nav-item ps-4"><a class="" href="#"><i class="fa fa-shopping-cart fa-2x" style="color:#704E3D;"></i></a></li>
+                                <li class="nav-item ps-4"><a class="" href="#"><i class="fa fa-user fa-2x" style="color:#704E3D;"></i></a></li>
+                                <li class="nav-item"><a href="#" class="navbar-brand heading-text">&nbsp&nbsp</a></li>
+                        </ul>
                 </div>
             </div>
         </div>
     </nav>
-    <div class="row">
+    <!--/หัวข้อ-->
+    <!--เนื้อหา-->
+    <div class="row pt-2">
+        <!--ฝั่งซ้าย-->
         <div class="col-lg-6">
             <div class="row pt-5">
                 <div class="container-fluid">
                     <center>
-                        <h2 class="">เกี่ยวกับเรา</h2>
+                        <h1 class="heading-text">เกี่ยวกับเรา</h1>
                     </center>
                 </div>
             </div>
-            <div class="row pt-5">
-                hello world
+            <div class="row pt-4">
+                <center>
+                    <!--img_main-->
+                    <div class="card border-light" style="width: 35rem;">
+                        <img src="https://images.unsplash.com/photo-1565299507177-b0ac66763828?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=722&q=80" 
+                        class="card-img-top" alt="food_left" height="550">
+                        <div class="card-body pt-4 ">
+                            <h4 class="card-text">สมมุตินะคะสมมุติว่าเขียนไปแล้วตอนนี้ยังนึกมะออก<br />
+                                ให้เห็นภาพหน้าเว็บเฉยๆ<br />
+                                มุแงๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆ<br />
+                                แงๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆ<br />
+                                แงๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆ<br />
+                                <br /></h4
+                        </div>
+                    </div>
+                </center>    
             </div>
         </div>
+        <!--ฝั่งขวา-->
         <div class="col-lg-6">
             <div class="row pt-5">
                 <div class="containner-fluid">
                     <center>
-                        <button>โปรโมชั่น</button>
+                        <button class="button" href="#">&nbspโปรโมชั่น&nbsp</button>
                     </center>
                 </div>
-
+            </div>
+            <div class="row pt-4">
+                <center>
+                    <div class="row row-cols-1 row-cols-md-2 g-4">
+                    <!--รูปซ้ายบน-->
+                        <div class="col pt-2">
+                          <div class="card border-light" style="width: 20rem;">
+                            <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80" 
+                            class="card-img-top" alt="..." width="200" height="200">
+                            <div class="card-body">
+                              <h5 class="card-title">Card title</h5>
+                              <p class="card-text"></p>
+                            </div>
+                          </div>
+                        </div>
+                    <!--รูปขวาบน-->
+                        <div class="col pt-2">
+                          <div class="card border-light" style="width: 20rem;">
+                            <img src="https://images.unsplash.com/photo-1604908550665-327363165423?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80" 
+                            class="card-img-top" alt="..." width="200" height="200">
+                            <div class="card-body">
+                              <h5 class="card-title">Card title</h5>
+                              <p class="card-text"></p>
+                            </div>
+                          </div>
+                        </div>
+                    <!--รูปซ้ายล่าง-->
+                        <div class="col pt-4">
+                            <div class="card border-light" style="width: 20rem;">
+                              <img src="https://images.unsplash.com/photo-1475090169767-40ed8d18f67d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1632&q=80" 
+                              class="card-img-top" alt="..." width="200" height="200">
+                              <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text"></p>
+                              </div>
+                            </div>
+                        </div>
+                    <!--รูปขวาล่าง-->
+                        <div class="col pt-4">
+                            <div class="card border-light" style="width: 20rem;">
+                              <img src="https://images.unsplash.com/photo-1554997433-bd88e371760b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1443&q=80" 
+                              class="card-img-top" alt="..." width="200" height="200">
+                              <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text"></p>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </center>
+            </div>
+            <div class="row pt-4">
+                <div class="containner-fluid">
+                    <center>
+                        <button class="button" href="#">&nbspดูโปรโมชั่นเพิ่มเติม&nbsp</button>
+                    </center>
+                </div>
             </div>
         </div>
     </div>
-
-
+    <!--/เนื้อหา-->
+    <!--ด้านล่าง ฝากมาแก้ด้วยครับคิดไม่ออกล้าาาาา-->
+    <footer class="row">
+        <div class="col-lg-8 pt-3">
+            <div class="col-lg-5 ">
+                <p>© Copyright Easy Restaurant, 2021. All rights reserved.</p>
+            </div>
+        </div>
+        <div class="col-lg-4 pt-3 ps-5 ">
+            <p>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp privacy | Email: easyrestaurant@kmitl.co.th</p>
+        </div>
+    </footer>
 </body>
 
 </html>
