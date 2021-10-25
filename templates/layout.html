@@ -20,21 +20,15 @@
             border: none;
             color: white;
             padding: 10px;
-            text-align: center;
             text-decoration: none;
             display: inline-block;
             font-size: 18px;
-            margin: 2px 2px;
             cursor: pointer;
             border-radius: 4px;
         }
 
         footer {
-            text-align: center;
-            padding: 3px;
-            background-color: #C1AA8D;
             color: #704E3D;
-            height: 100%;
         }
 
         body {
@@ -47,58 +41,70 @@
         }
     </style>
 </head>
+
 <body>
     <!--หัวข้อ-->
-<div class="container-fluid">
-    <nav class="row navbar navbar-expand-lg " style="background-color:#C1AA8D; ">
-        <div class="container-fluid">
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg row" style="background-color:#C1AA8D; ">
             <div class="col-lg-4">
                 <div class="row">
-                    <div class="col-lg-1"></div> 
+                    <div class="col-lg-1"></div>
                     <div class="col-lg-1">
                         <div>
                             <a class="navbar-brand heading-text"> </a>
-                            <a class="" href=""><i class="fa fa-home fa-2x" style="color:#704E3D;"></i></a>
+                            <a class="" href="/"><i class="fa fa-home fa-2x" style="color:#704E3D;"></i></a>
                         </div>
                     </div>
                     <div class="col-lg-2">
-                        <a class="navbar-brand heading-text top ps-2"href="">Easy Restaurant</a>
+                        <a class="navbar-brand heading-text top ps-4" href="/">Easy Restaurant</a>
                     </div>
                 </div>
             </div>
             <div class="col-lg-8">
                 <div class="row">
-                        <ul class="nav nav-pills justify-content-end">
-                                <li class="nav-item"><a href="/menu" class="navbar-brand heading-text top">&nbsp Menu</a></li>
-                                <li class="nav-item"><a href="#" class="navbar-brand heading-text top">&nbsp Reservation</a></li>
-                                <li class="nav-item"><a href="#" class="navbar-brand heading-text top">&nbsp Contact</a></li>
-                                <li class="nav-item"><a href="#" class="navbar-brand heading-text top">&nbsp Paymant</a></li>
-                                <li class="nav-item"><a class="" href="#"><i class="fa fa-search fa-2x" style="color:#704E3D;"></i></a></li>
-                                <li class="nav-item ps-4"><a class="" href="#"><i class="fa fa-shopping-cart fa-2x" style="color:#704E3D;"></i></a></li>
-                                <li class="nav-item ps-4"><a class="" href="#"><i class="fa fa-user fa-2x" style="color:#704E3D;"></i></a></li>
-                                <li class="nav-item"><a href="#" class="navbar-brand heading-text">&nbsp&nbsp</a></li>
-                        </ul>
+                    <ul class="nav nav-pills justify-content-end">
+                        <li class="nav-item"><a href="/menu" class="navbar-brand heading-text top">&nbsp
+                                Menu</a>
+                        </li>
+                        <li class="nav-item"><a href="#" class="navbar-brand heading-text top">&nbsp
+                                Reservation</a>
+                        </li>
+                        <li class="nav-item"><a href="#" class="navbar-brand heading-text top">&nbsp Contact</a>
+                        </li>
+                        <li class="nav-item"><a href="#" class="navbar-brand heading-text top">&nbsp Paymant</a>
+                        </li>
+                        <li class="nav-item"><a class="" href="#"><i class="fa fa-search fa-2x"
+                                    style="color:#704E3D;"></i></a></li>
+                        <li class="nav-item ps-4"><a class="" href="#"><i class="fa fa-shopping-cart fa-2x"
+                                    style="color:#704E3D;"></i></a></li>
+                        <li class="nav-item ps-4"><a class="" href="#"><i class="fa fa-user fa-2x"
+                                    style="color:#704E3D;"></i></a></li>
+                        <li class="nav-item"><a href="#" class="navbar-brand heading-text">&nbsp&nbsp</a></li>
+                    </ul>
                 </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </div>
     <!--/หัวข้อ-->
-    <div></div>
-        {% block content %}
+    {% block content %}
 
-        {% endblock %}
+    {% endblock %}
     <!-- ด้านล่าง ฝากมาแก้ด้วยครับคิดไม่ออกล้าาาาา แป้ง: แก้แล้วๆๆ -->
-    <footer class="row">
+    <footer class="" style="background-color: #C1AA8D;">
+
         <div class="col-lg-6 pt-3">
             <!-- <div class="col-lg-5 "> -->
-                <p style="text-align: left; margin-left: 20px;">© Copyright Easy Restaurant, 2021. All rights reserved.</p>
+            <p style="text-align: left; margin-left: 20px;">© Copyright Easy Restaurant, 2021. All rights
+                reserved.
+            </p>
             <!-- </div> -->
         </div>
-        <div class="col-lg-6 pt-3 ps-5 ">
+        <div class="col-lg-6 pt-3">
             <p style="text-align: right; margin-right: 20px">privacy | Email: easyrestaurant@kmitl.co.th</p>
         </div>
+        </div>
     </footer>
-</div>
+
 </body>
 
 </html>
