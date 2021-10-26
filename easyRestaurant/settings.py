@@ -76,12 +76,8 @@ WSGI_APPLICATION = 'easyRestaurant.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'easyrestaurant',
-        'USER' : 'root',
-        'PASSWORD' : '',
-        'HOST' :  'localhost',
-        'PORT' : ''
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
