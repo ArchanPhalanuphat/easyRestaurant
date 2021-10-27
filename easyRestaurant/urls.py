@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from easyRestaurant_web import views
+from easyRestaurant_web import process, views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,4 +25,6 @@ urlpatterns = [
     path('menu_food/', views.page_menu_food),
     path('menu_dessert/', views.page_menu_dessert),
     path('menu_drink/', views.page_menu_drink),
+    path('register/', views.page_register),
+    path('register/register_process/', process.register_process),
 ]

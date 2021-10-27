@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.contrib.auth.models import User
 # Create your views here.
 
 def page_test(request):
@@ -19,5 +20,10 @@ def page_menu_dessert(request):
 
 def page_menu_drink(request):
     return render(request, 'page_menu_drink.html')
+
+def page_register(request):
+    print('hello')
+    return render(request, 'page_register.html')
+
 
 
