@@ -25,6 +25,7 @@ urlpatterns = [
     path('menu_food/', views.page_menu_food),
     path('menu_dessert/', views.page_menu_dessert),
     path('menu_drink/', views.page_menu_drink),
+    path('login/', views.page_login),
     path('register/', views.page_register),
     path('register/register_process/', process.register_process),
 ]

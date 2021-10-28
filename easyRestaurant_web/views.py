@@ -22,8 +22,10 @@ def page_menu_drink(request):
     return render(request, 'page_menu_drink.html')
 
 def page_register(request):
-    print('hello')
     return render(request, 'page_register.html')
+
+def page_login(request):
+    return render(request, 'page_login.html')
 
 
 

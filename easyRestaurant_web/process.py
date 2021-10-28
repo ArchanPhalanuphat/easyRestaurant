@@ -3,7 +3,6 @@ from django.contrib.auth.models import User
 from django.shortcuts import render
 
 def register_process(request):
-    print('hello')
     username=request.POST.get('username')
     firstname=request.POST.get('firstname')
     lastname=request.POST.get('lastname')
