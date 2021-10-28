@@ -27,5 +27,8 @@ urlpatterns = [
     path('menu_drink/', views.page_menu_drink),
     path('login/', views.page_login),
     path('register/', views.page_register),
-    path('register/register_process/', process.register_process),
+    path('register/register_process', process.register_process),
+    path('login/login_process', process.login_process),
+    path('user', views.page_user),
+    path('logout', process.logout),
 ]

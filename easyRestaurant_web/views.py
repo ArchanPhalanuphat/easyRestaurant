@@ -27,5 +27,7 @@ def page_register(request):
 def page_login(request):
     return render(request, 'page_login.html')
 
+def page_user(request):
+    return render(request, 'page_user.html')
 
 

@@ -2,7 +2,14 @@
 
 
 {% block content%}
-<form action="register_process" method="post">
+<form action="login_process" method="post">
+    {% if messages %}
+    <div class="alert alert-danger" role="alert">
+        {% for message in messages %}
+            <h5 align="center">{{message}}</h5>
+        {% endfor %}
+    </div>
+    {% endif %}
     {% csrf_token %}
     <div class="form-group">
         <label for="">Username</label>
@@ -13,7 +20,7 @@
         <label for="">Password</label>
         <input type="password" class="form-control" name="password">
     </div>
-    <input type="submit" value="ลงทะเบียน" class="btn btn-primary">
+    <input type="submit" value="เข้าสู่ระบบ" class="btn btn-primary">
 </form>
 <a class="button top" type="button" href="/register" role="button">register</a>
 {% endblock %}
