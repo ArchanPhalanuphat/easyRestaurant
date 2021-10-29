@@ -30,7 +30,7 @@ def register_process(request):
         )
     user.save()
     messages.info(request, 'สมัครสมาชิกเรียบร้อย')
-    return redirect('/register')
+    return redirect('/login')
 
 def login_process(request):
     username=request.POST.get('username')
