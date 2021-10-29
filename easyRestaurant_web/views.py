@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.models import User
 # Create your views here.
@@ -22,10 +22,16 @@ def page_menu_drink(request):
     return render(request, 'page_menu_drink.html')
 
 def page_register(request):
-    return render(request, 'page_register.html')
+    if request.user.is_authenticated:
+        return redirect('/')
+    else:
+        return render(request, 'page_register.html')
 
 def page_login(request):
-    return render(request, 'page_login.html')
+    if request.user.is_authenticated:
+        return redirect('/')
+    else:
+        return render(request, 'page_login.html')
 
 def page_user(request):
     return render(request, 'page_user.html')

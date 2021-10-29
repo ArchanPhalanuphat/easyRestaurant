@@ -4,6 +4,7 @@ from django.contrib.auth.models import User,auth
 from django.shortcuts import redirect, render
 
 def register_process(request):
+    
     username=request.POST.get('username')
     firstname=request.POST.get('firstname')
     lastname=request.POST.get('lastname')
@@ -28,7 +29,8 @@ def register_process(request):
         email = email
         )
     user.save()
-    return render(request, 'page_register.html')
+    messages.info(request, 'สมัครสมาชิกเรียบร้อย')
+    return redirect('/register')
 
 def login_process(request):
     username=request.POST.get('username')
