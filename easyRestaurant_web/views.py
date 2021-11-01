@@ -36,4 +36,6 @@ def page_login(request):
 def page_user(request):
     return render(request, 'page_user.html')
 
+def add_manu(request):
+    return render(request, 'add_menu.html')
 

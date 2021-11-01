@@ -31,4 +31,6 @@ urlpatterns = [
     path('login/login_process', process.login_process),
     path('user', views.page_user),
     path('logout', process.logout),
+    path('add_menu', views.add_manu),
+    path('addmenu_process', process.addmenu_process),
 ]

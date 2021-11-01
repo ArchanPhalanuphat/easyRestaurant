@@ -2,9 +2,11 @@ from django.contrib import messages
 from django.http import HttpResponse, response
 from django.contrib.auth.models import User,auth
 from django.shortcuts import redirect, render
+from easyRestaurant_web.models import Menu
+
+
 
 def register_process(request):
-    
     username=request.POST.get('username')
     firstname=request.POST.get('firstname')
     lastname=request.POST.get('lastname')
@@ -45,4 +47,22 @@ def login_process(request):
 
 def logout(request):
     auth.logout(request)
-    return redirect('/')
+    return redirect('/login')
+
+def addmenu_process(request):
+    name = request.POST.get('name')
+    type_food = request.POST.get('type_food')
+    price = request.POST.get('price')
+    status = request.POST.get('status')
+    if status == 'have':
+        status = True
+    else:
+        status = False
+    menu=Menu(
+        name = name,
+        genre = type_food,
+        price = price,
+        status = status
+            )
+    menu.save()
+    return redirect('/add_menu')
