@@ -18,10 +18,12 @@ def page_menu_food(request):
     return render(request, 'page_menu_food.html', {'menu':data})
 
 def page_menu_dessert(request):
-    return render(request, 'page_menu_dessert.html')
+    data = Menu.objects.all()
+    return render(request, 'page_menu_dessert.html', {'menu':data})
 
 def page_menu_drink(request):
-    return render(request, 'page_menu_drink.html')
+    data = Menu.objects.all()
+    return render(request, 'page_menu_drink.html', {'menu':data})
 
 def page_register(request):
     if request.user.is_authenticated:

@@ -43,16 +43,17 @@
        </div>
        <div class="row">
               {% for food in menu %}
-                     <div class="col-lg-6">
-                            {% if food.status == True %}
-                                   <center><h5 class="status_flase">{{food.name}} {{food.price}} บาท</h5></center>
-                            {% else %}
-                                   <center><h5>{{food.name}} {{food.price}} บาท</h5></center>
-                            {%endif%}
-                     </div>
-                     <div class="col-lg-6">
-                            <center><h1>456</h1></center>
-                     </div>
+                     {% if food.genre == "food" %}
+                            <div class="col-lg-6">
+                                   <div class="{% cycle '' '' %}">
+                                          {% if food.status == False %}
+                                                 <center><h5 class="status_flase">{{food.name}} {{food.price}} บาท</h5></center>
+                                          {% else %}
+                                                 <center><h5>{{food.name}} {{food.price}} บาท</h5></center>
+                                          {%endif%}
+                                   </div>
+                            </div>
+                     {%endif%}
               {% endfor %}
        </div>
 {% endblock %}

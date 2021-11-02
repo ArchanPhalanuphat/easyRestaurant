@@ -41,4 +41,19 @@
 
               </div>
        </div>
+       <div class="row">
+              {% for food in menu %}
+                     {% if food.genre == "food" %}
+                            <div class="col-lg-6">
+                                   <div class="{% cycle '' '' %}">
+                                          {% if food.status == False %}
+                                                 <center><h5 class="status_flase">{{food.name}} {{food.price}} บาท</h5></center>
+                                          {% else %}
+                                                 <center><h5>{{food.name}} {{food.price}} บาท</h5></center>
+                                          {%endif%}
+                                   </div>
+                            </div>
+                     {%endif%}
+              {% endfor %}
+       </div>
 {% endblock %}
