@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.models import User
+from .models import Menu
 # Create your views here.
 
 def page_test(request):
@@ -13,7 +14,8 @@ def page_menu_promotion(request):
     return render(request, 'page_menu_promotion.html')
 
 def page_menu_food(request):
-    return render(request, 'page_menu_food.html')
+    data = Menu.objects.all()
+    return render(request, 'page_menu_food.html', {'menu':data})
 
 def page_menu_dessert(request):
     return render(request, 'page_menu_dessert.html')
@@ -38,4 +40,5 @@ def page_user(request):
 
 def add_manu(request):
     return render(request, 'add_menu.html')
+
 
