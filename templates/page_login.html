@@ -2,7 +2,37 @@
 
 
 {% block content%}
-<form action="login_process" method="post">
+
+
+<style>
+    .form-group2 {
+        width: 500px;
+        margin-left: 500px;
+        margin-top: 50px;
+
+    }
+    .form-group {
+        width: 500px;
+        margin-left: 500px;
+        margin-top: 50px;
+    }
+    .login {
+        
+    }
+    .box {
+        border: 10em;
+    }
+
+
+
+
+
+
+
+</style>
+
+<h1 class="login">Login</h1>
+<form action="login_process" method="post" class="box">
     {% if messages %}
     <div class="alert alert-danger" role="alert">
         {% for message in messages %}
@@ -16,7 +46,7 @@
         <input type="text" class="form-control" name="username">
     </div>
 
-    <div class="form-group">
+    <div class="form-group2">
         <label for="">Password</label>
         <input type="password" class="form-control" name="password">
     </div>
