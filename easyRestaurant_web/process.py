@@ -58,11 +58,15 @@ def addmenu_process(request):
         status = True
     else:
         status = False
+    if len(request.FILES) != 0:
+        image = request.FILES['image']
     menu=Menu(
         name = name,
         genre = type_food,
         price = price,
-        status = status
+        status = status,
+        image = image
             )
     menu.save()
+    messages.info(request, 'เพิ่มเมนูเรียบร้อย')
     return redirect('/add_menu')

@@ -10,4 +10,4 @@ class Menu(models.Model):
     genre = models.CharField(max_length=20)
     price = models.DecimalField(max_digits=8, decimal_places=2)
     status = models.BooleanField(default=False)
-
+    image = models.ImageField(upload_to='image_menu', null=True, blank=True)

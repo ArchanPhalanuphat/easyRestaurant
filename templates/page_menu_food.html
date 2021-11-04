@@ -44,12 +44,14 @@
        <div class="row">
               {% for food in menu %}
                      {% if food.genre == "food" %}
-                            <div class="col-lg-6">
+                            <div class="col-lg-4">
                                    <div class="{% cycle '' '' %}">
                                           {% if food.status == False %}
                                                  <center><h5 class="status_flase">{{food.name}} {{food.price}} บาท</h5></center>
+                                                 <img src="{{food.image.url}}" class="img-fluid">
                                           {% else %}
                                                  <center><h5>{{food.name}} {{food.price}} บาท</h5></center>
+                                                 <img src="{{food.image.url}}" class="img-fluid">
                                           {%endif%}
                                    </div>
                             </div>
