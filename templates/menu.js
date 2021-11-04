@@ -2,100 +2,76 @@ export let menu = [{
     menuId: 'P001',
     productImg: 'https://cdn.pixabay.com/photo/2018/10/03/13/17/fried-rice-with-shrimp-soup-3721358_960_720.jpg',
     productName: 'ข้าวผัดกุ้ง',
-    productPrice: '130 Baht',
+    productPrice: '100 Baht',
 }, {
-    productId: 'P002',
-    productImg: './image/P002.jpg',
-    productName: 'DAZY Plicated Detail Split Hem Tee Dress',
-    productDesc: 'Elegant ,Midi ,Summer',
-    productPrice: '310 Baht',
-    productStock: '89 pieces'
+    menuId: 'P002',
+    productImg: 'https://cdn.pixabay.com/photo/2020/06/04/16/49/food-5259549_960_720.jpg',
+    productName: 'สเต็กหมู',
+    productPrice: '150 Baht',
 }, {
-    productId: 'P003',
-    productImg: './image/P003.jpg',
-    productName: 'DAZY Patch Detail Keyhole Back Blouse',
-    productDesc: 'Casual, Regular ,Spring/Fall',
-    productPrice: '198 Baht',
-    productStock: '94 pieces'
+    menuId: 'P003',
+    productImg: 'https://cdn.pixabay.com/photo/2016/09/19/22/16/soup-1681452_960_720.jpg',
+    productName: 'ต้มยำกุ้ง',
+    productPrice: '120 Baht',
 }, {
-    productId: 'P004',
-    productImg: './image/P004.jpg',
-    productName: 'DAZY Solid Ruched Crop Blouse',
-    productDesc: 'Boho, Ruched, Crop',
-    productPrice: '240 Baht',
-    productStock: '58 pieces'
+    menuId: 'P004',
+    productImg: '',
+    productName: 'food',
+    productPrice: '100 Baht',
 
 }, {
-    productId: 'P005',
-    productImg: './image/P005.jpg',
-    productName: 'DAZY Puff Sleeve Textured Blouse',
-    productDesc: 'Casual ,Crop ,Spring/Fall',
-    productPrice: '290 Baht',
-    ProductStock: '70 pieces'
+    menuId: 'P005',
+    productImg: '',
+    productName: 'food',
+    productPrice: '100 Baht',
 
 }, {
-    productId: 'P006',
-    productImg: './image/P006.jpg',
-    productName: 'DAZY Puff Sleeve Contrast Binding Blouse',
-    productDesc: 'Casual, Crop,Summer',
+    menuId: 'P006',
+    productImg: '',
+    productName: 'food',
     productPrice: '200 Baht',
-    productStock: '99 pieces'
 }, {
-    productId: 'P007',
-    productImg: './image/P007.jpg',
-    productName: 'DAZY Flap Detail Crop Blouse',
-    productDesc: 'Casual ,Crop ,Summer',
+    menuId: 'P007',
+    productImg: '',
+    productName: 'food',
     productPrice: '209 Baht',
-    productStock: '56 pieces'
 }]
 
 export let dessert = [{
     menuId: 'P001',
     productImg: 'https://cdn.pixabay.com/photo/2018/10/03/13/17/fried-rice-with-shrimp-soup-3721358_960_720.jpg',
     productName: 'ข้าวผัดกุ้ง',
-    productPrice: '130 Baht',
+    productPrice: '100 Baht',
 }, {
-    productId: 'P002',
-    productImg: './image/P002.jpg',
-    productName: 'DAZY Plicated Detail Split Hem Tee Dress',
-    productDesc: 'Elegant ,Midi ,Summer',
-    productPrice: '310 Baht',
-    productStock: '89 pieces'
+    menuId: 'P002',
+    productImg: 'https://cdn.pixabay.com/photo/2020/06/04/16/49/food-5259549_960_720.jpg',
+    productName: 'สเต็กหมู',
+    productPrice: '150 Baht',
 }, {
-    productId: 'P003',
-    productImg: './image/P003.jpg',
-    productName: 'DAZY Patch Detail Keyhole Back Blouse',
-    productDesc: 'Casual, Regular ,Spring/Fall',
-    productPrice: '198 Baht',
-    productStock: '94 pieces'
+    menuId: 'P003',
+    productImg: 'https://cdn.pixabay.com/photo/2016/09/19/22/16/soup-1681452_960_720.jpg',
+    productName: 'ต้มยำกุ้ง',
+    productPrice: '120 Baht',
 }, {
-    productId: 'P004',
-    productImg: './image/P004.jpg',
-    productName: 'DAZY Solid Ruched Crop Blouse',
-    productDesc: 'Boho, Ruched, Crop',
-    productPrice: '240 Baht',
-    productStock: '58 pieces'
+    menuId: 'P004',
+    productImg: '',
+    productName: 'food',
+    productPrice: '100 Baht',
 
 }, {
-    productId: 'P005',
-    productImg: './image/P005.jpg',
-    productName: 'DAZY Puff Sleeve Textured Blouse',
-    productDesc: 'Casual ,Crop ,Spring/Fall',
-    productPrice: '290 Baht',
-    ProductStock: '70 pieces'
+    menuId: 'P005',
+    productImg: '',
+    productName: 'food',
+    productPrice: '100 Baht',
 
 }, {
-    productId: 'P006',
-    productImg: './image/P006.jpg',
-    productName: 'DAZY Puff Sleeve Contrast Binding Blouse',
-    productDesc: 'Casual, Crop,Summer',
+    menuId: 'P006',
+    productImg: '',
+    productName: 'food',
     productPrice: '200 Baht',
-    productStock: '99 pieces'
 }, {
-    productId: 'P007',
-    productImg: './image/P007.jpg',
-    productName: 'DAZY Flap Detail Crop Blouse',
-    productDesc: 'Casual ,Crop ,Summer',
+    menuId: 'P007',
+    productImg: '',
+    productName: 'food',
     productPrice: '209 Baht',
-    productStock: '56 pieces'
 }]
