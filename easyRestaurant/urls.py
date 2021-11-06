@@ -35,6 +35,10 @@ urlpatterns = [
     path('logout', process.logout),
     path('add_menu', views.add_manu),
     path('addmenu_process', process.addmenu_process),
+    path('add_recommend', views.add_recommend),
+    path('add_recommend_process', process.add_recommend_process),
+    path('pagemenu', views.pagemenu),
+    path('image_pagemenu_process', process.image_pagemenu_process),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
