@@ -30,6 +30,8 @@
     .eiei {
         margin-left: 900px;
         height: 10px;
+        
+
     }
 
 
@@ -48,25 +50,24 @@
     </div>
     {% endif %}
     {% csrf_token %}
-    <fieldset>
-        <legend class="login">
-            Login Form
-        </legend>
+    <legend class="login">
+        Login Form
+    </legend>
+    <div class="form-group">
+        <label for="">Username</label>
+        <input type="text" class="form-control" name="username">
+    </div>
 
-        <div class="form-group">
-            <label for="">Username</label>
-            <input type="text" class="form-control" name="username">
-        </div>
-
-        <div class="form-group2">
-            <label for="">Password</label>
-            <input type="password" class="form-control" name="password">
-        </div>
-        <br>
-        <input type="submit" value="เข้าสู่ระบบ" class="btn btn-primary">
-        <br>
+    <div class="form-group2">
+        <label for="">Password</label>
+        <input type="password" class="form-control" name="password">
+    </div>
+    <span class="submit">
+    <input type="submit" value="เข้าสู่ระบบ" class="btn btn-primary">
+    </span>
+    <span class="eiei">
         <a class="button top" type="button" href="/register" role="button">register</a>
-    </fieldset>
+    </span>
 </form>
 <br>
 {% endblock %}
