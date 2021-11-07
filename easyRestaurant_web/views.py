@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from .models import Menu
 from .models import image_promotion
 from .models import image_pagemenu
+from .models import image_main
 # Create your views here.
 
 def page_test(request):
@@ -11,7 +12,8 @@ def page_test(request):
 
 def page_first(request):
     data = image_promotion.objects.all()
-    return render(request, 'page_first.html', {'promotion':data})
+    data_left = image_main.objects.all()
+    return render(request, 'page_first.html', {'promotion':data,'datas':data_left})
 
 def page_menu_promotion(request):
     data = Menu.objects.all()
@@ -55,5 +57,7 @@ def add_recommend(request):
     return render(request, 'add_recommend.html')
 
 def pagemenu(request):
-
     return render(request, 'pagemenu.html')
+
+def add_image_main(request):
+    return render(request, 'add_image_main.html')

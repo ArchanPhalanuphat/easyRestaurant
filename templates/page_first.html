@@ -14,15 +14,16 @@
         </div>
         <div class="row pt-4">
             <center>
+                {% for data in datas %}
                 <!--img_main-->
                 <div class="card border-light" style="width: 35rem;">
-                    <img src="https://images.unsplash.com/photo-1565299507177-b0ac66763828?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=722&q=80" 
+                    <img src="{{data.image.url}}" 
                     class="card-img-top" alt="food_left" height="550">
                     <div class="card-body pt-4 ">
-                        <h4 class="card-text">ร้านอาหารที่อร่อยที่สุดในโลก<br />
-                            อร่อยจนงง งงไปหมด<br /></h4>
+                        <h4 class="card-text">{{data.description}}<br /></h4>
                     </div>
                 </div>
+                {%endfor%}
             </center>    
         </div>
     </div>

@@ -5,6 +5,7 @@ from django.shortcuts import redirect, render
 from easyRestaurant_web.models import Menu
 from easyRestaurant_web.models import image_promotion
 from easyRestaurant_web.models import image_pagemenu
+from easyRestaurant_web.models import image_main
 
 
 def register_process(request):
@@ -102,7 +103,7 @@ def add_recommend_process(request):
         name4 = name4,
         price4 = price4,
         image4 = image4
-            )
+    )
     image_promo.save()
     messages.info(request, 'Complete')
     return redirect('/add_recommend')
@@ -116,3 +117,15 @@ def image_pagemenu_process(request):
     page_menu.save()
     messages.info(request, 'Complete')
     return redirect('/pagemenu')
+
+def add_image_main_process(request):
+    if len(request.FILES) != 0:
+        image = request.FILES['image']
+    description = request.POST.get('description')
+    add_main = image_main(
+            image = image,
+            description = description
+    )
+    add_main.save()
+    messages.info(request, 'complate')
+    return redirect('/add_image_main')
