@@ -1,0 +1,43 @@
+{% extends 'layout.html'%}
+
+
+{% block content%}
+{% if messages %}
+    <div class="alert alert-danger" role="alert">
+        {% for message in messages %}
+            <h5 align="center">{{message}}</h5>
+        {% endfor %}
+    </div>
+{% endif %}
+  <form action="add_recommend_process" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            {% csrf_token %}     
+            <label for="">ชื่อเมนูที่1</label>
+            <input type="text" class="from-control" name="name1"><br> 
+            <label for="">ราคาที่1</label>
+            <input type="number" min="1" step="any" class="from-control" name="price1"><br> 
+            <label for="" class="form-label">Image</label>
+            <input id="image" type="file" name="image1"><br>
+            <label for="">ชื่อเมนูที่2</label>
+            <input type="text" class="from-control" name="name2"><br> 
+            <label for="">ราคาที่2</label>
+            <input type="number" min="1" step="any" class="from-control" name="price2"><br> 
+            <label for="" class="form-label">Image</label>
+            <input id="image" type="file" name="image2"><br>
+            <label for="">ชื่อเมนูที่3</label>
+            <input type="text" class="from-control" name="name3"><br> 
+            <label for="">ราคาที่3</label>
+            <input type="number" min="1" step="any" class="from-control" name="price3"><br> 
+            <label for="" class="form-label">Image</label>
+            <input id="image" type="file" name="image3"><br>
+            <label for="">ชื่อเมนูที่4</label>
+            <input type="text" class="from-control" name="name4"><br> 
+            <label for="">ราคาที่4</label>
+            <input type="number" min="1" step="any" class="from-control" name="price4"><br> 
+            <label for="" class="form-label">Image</label>
+            <input id="image" type="file" name="image4"><br>
+      </div>
+      <input type="submit" value="เพิ่มเมนูอาหาร" class="btn btn-primary">
+  </form>
+
+{% endblock %}

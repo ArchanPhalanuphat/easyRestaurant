@@ -1,0 +1,23 @@
+{% extends 'layout.html'%}
+
+
+{% block content%}
+{% if messages %}
+    <div class="alert alert-danger" role="alert">
+        {% for message in messages %}
+            <h5 align="center">{{message}}</h5>
+        {% endfor %}
+    </div>
+{% endif %}
+    <form action="add_image_main_process" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            {% csrf_token %}     
+            <label for="" class="form-label">Image</label>
+            <input id="image" type="file" name="image"><br>
+            <label for="">คำอธิบาย</label>
+            <input type="text" class="from-control" name="description"> 
+        </div>
+        <input type="submit" value="เพิ่มเมนูอาหาร" class="btn btn-primary">
+    </form>
+
+{% endblock %}
