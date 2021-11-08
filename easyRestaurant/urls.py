@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from easyRestaurant_web import process, views
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -31,4 +33,14 @@ urlpatterns = [
     path('login/login_process', process.login_process),
     path('user', views.page_user),
     path('logout', process.logout),
+    path('add_menu', views.add_manu),
+    path('addmenu_process', process.addmenu_process),
+    path('add_recommend', views.add_recommend),
+    path('add_recommend_process', process.add_recommend_process),
+    path('pagemenu', views.pagemenu),
+    path('image_pagemenu_process', process.image_pagemenu_process),
+    path('add_image_main', views.add_image_main),
+    path('add_image_main_process', process.add_image_main_process),
 ]
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

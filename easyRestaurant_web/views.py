@@ -1,25 +1,39 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.models import User
+from .models import Menu
+from .models import image_promotion
+from .models import image_pagemenu
+from .models import image_main
 # Create your views here.
 
 def page_test(request):
     return render(request, 'test.html')
 
 def page_first(request):
-    return render(request, 'page_first.html')
+    data = image_promotion.objects.all()
+    data_left = image_main.objects.all()
+    return render(request, 'page_first.html', {'promotion':data,'datas':data_left})
 
 def page_menu_promotion(request):
-    return render(request, 'page_menu_promotion.html')
+    data = Menu.objects.all()
+    data2 = image_pagemenu.objects.all()
+    return render(request, 'page_menu_promotion.html', {'menu':data,'images':data2})
 
 def page_menu_food(request):
-    return render(request, 'page_menu_food.html')
+    data = Menu.objects.all()
+    data2 = image_pagemenu.objects.all()
+    return render(request, 'page_menu_food.html', {'menu':data,'images':data2})
 
 def page_menu_dessert(request):
-    return render(request, 'page_menu_dessert.html')
+    data = Menu.objects.all()
+    data2 = image_pagemenu.objects.all()
+    return render(request, 'page_menu_dessert.html', {'menu':data,'images':data2})
 
 def page_menu_drink(request):
-    return render(request, 'page_menu_drink.html')
+    data = Menu.objects.all()
+    data2 = image_pagemenu.objects.all()
+    return render(request, 'page_menu_drink.html', {'menu':data,'images':data2})
 
 def page_register(request):
     if request.user.is_authenticated:
@@ -36,4 +50,14 @@ def page_login(request):
 def page_user(request):
     return render(request, 'page_user.html')
 
+def add_manu(request):
+    return render(request, 'add_menu.html')
 
+def add_recommend(request):
+    return render(request, 'add_recommend.html')
+
+def pagemenu(request):
+    return render(request, 'pagemenu.html')
+
+def add_image_main(request):
+    return render(request, 'add_image_main.html')
