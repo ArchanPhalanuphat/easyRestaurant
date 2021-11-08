@@ -79,6 +79,17 @@
             margin-bottom: 50px;
         }
 
+        input[type=search] {
+            border: none;
+            outline: none;
+            font-size: 15px;
+            border-radius: 3px;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
     </style>
 </head>
 
@@ -105,8 +116,9 @@
                     <ul class="nav nav-pills justify-content-end">
                         <li class="nav-item"><a href="/menu_promotion" class="navbar-brand heading-text top">&nbsp Menu</a></li>
                         <li class="nav-item"><a href="#" class="navbar-brand heading-text top">&nbsp Table</a></li>
-                        <li class="nav-item ps-4"><a class="" href="#"><i class="fa fa-search fa-2x"
-                                    style="color:#704E3D;"></i></a></li>
+                        <li class="nav-item ps-4"><a class="search" href="#"><i class="fa fa-search fa-2x"
+                                    style="color:#704E3D;"></i></a>
+                                    <input type="search" name="" placeholder=" Search Menu" id=""></li>
                         <li class="nav-item ps-4"><a class="" href="#"><i class="fa fa-shopping-cart fa-2x"
                             style="color:#704E3D;"></i></a></li>
                         {% if user.is_authenticated %}
