@@ -25,11 +25,13 @@
     }
     input[type="submit"] {
         margin-left: 250px;
-        margin-top: 50px;
+        margin-top: 55px;
     }
     .eiei {
-        margin-left: 250px;
+        margin-left: 100px;
         height: 10px;
+        padding-bottom: 10re;
+        
         
     }
     .boxy {
@@ -51,7 +53,10 @@
         width: 300px;
         margin-top: 10px;
     }
+    .button {
+        padding: 5px;
 
+    }
 
 
 
@@ -80,13 +85,10 @@
             <label for="">Password</label>
             <input type="password" class="form-control" name="password">
         </div>
-        <span class="submit">
         <input type="submit" value="เข้าสู่ระบบ" class="btn btn-primary">
-        </span>
-        <span class="eiei">
-            <a class="button top" type="button" href="/register" role="button">register</a>
-        </span>
+
     </form>
+    <a class="button top" type="button" href="/register" role="button">register</a>
 </div>
 <br>
 {% endblock %}
