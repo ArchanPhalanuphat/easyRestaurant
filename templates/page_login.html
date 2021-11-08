@@ -26,7 +26,12 @@
     input[type="submit"] {
         margin-left: 250px;
         margin-top: 55px;
+        padding: 5px;
+        background-color: #C1AA8D;
+        color: black;
+        border-color: #C1AA8D;
     }
+
     .eiei {
         margin-left: 100px;
         height: 10px;
@@ -53,9 +58,18 @@
         width: 300px;
         margin-top: 10px;
     }
+
     .button {
         padding: 5px;
+        margin-left: 150px;
+        background-color: bisque;
+        color: black;
+        
+        
 
+    }
+    .dada {
+        display: inline-block;
     }
 
 
@@ -74,21 +88,24 @@
         {% endif %}
         {% csrf_token %}
         <legend class="login">
-            Login Form
+            Easy Restaurant
         </legend>
         <div class="form-group">
             <label for="">Username</label>
-            <input type="text" class="form-control" name="username">
+            <input type="text" class="form-control" name="username" placeholder="eg.pangpntt">
         </div>
 
         <div class="form-group2">
             <label for="">Password</label>
-            <input type="password" class="form-control" name="password">
+            <input type="password" class="form-control" name="password" placeholder="********">
         </div>
-        <input type="submit" value="เข้าสู่ระบบ" class="btn btn-primary">
-
+        <span class="dada">
+            <input type="submit" value="เข้าสู่ระบบ" class="btn btn-primary">
+            <a class="button top" type="button" href="/register" role="button">register</a>
+        </span>
     </form>
-    <a class="button top" type="button" href="/register" role="button">register</a>
+
 </div>
+
 <br>
 {% endblock %}
