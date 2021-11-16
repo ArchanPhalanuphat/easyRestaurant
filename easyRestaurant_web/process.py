@@ -123,8 +123,8 @@ def add_image_main_process(request):
         image = request.FILES['image']
     description = request.POST.get('description')
     add_main = image_main(
-            image = image,
-            description = description
+        image = image,
+        description = description
     )
     add_main.save()
     messages.info(request, 'complate')
