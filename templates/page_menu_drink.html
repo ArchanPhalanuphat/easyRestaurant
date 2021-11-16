@@ -47,7 +47,7 @@
               {% for food in menu %}
                      {% if food.genre == "drink" %}
                             <div class="col-lg-6">
-                                   <div class="{% cycle '' '' %}">
+                                   <div class="{% cycle 'menu1' 'menu2' 'menu3' %}">
                                           {% if food.status == False %}
                                                  <center><h5 class="status_flase">{{food.name}} {{food.price}} บาท</h5></center>
                                                  <img src="{{food.image.url}}" class="img-fluid">

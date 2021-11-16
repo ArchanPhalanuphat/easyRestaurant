@@ -48,12 +48,118 @@
             opacity: 0.5;  
         }
 
-        .test1{
-            opacity: 0.5;
+        .img-fluid {
+            width: auto;
+            height: auto;
+            border-radius: 20px;
+        }
+
+        .menu1 {
+            padding-left: 50px;
+            padding-top: 20px;
+            padding-right: 50px;
+            width:100%;
+            margin-bottom: 50px;
+            
         }
         
+        .menu2 {
+            padding-left: 50px;
+            padding-top: 20px;
+            padding-right: 50px;
+            width:100%;
+            margin-bottom: 50px;
+        }
+
+        .menu3 {
+            padding-left: 50px;
+            padding-top: 20px;
+            padding-right: 50px;
+            width:100%;
+            margin-bottom: 50px;
+        }
+        
+        .form-group2 {
+            width: 400px;
+            margin-left: 30px;
+            margin-top: 50px;
+
+        }
+        .form-group {
+            width: 400px;
+            margin-left: 30px;
+            margin-top: 50px;
+        }
+        .login {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        input[type="submit"] {
+            /* margin-left: 250px;
+            margin-top: 20px; */
+            padding: 5px;
+            background-color: #C1AA8D;
+            color: black;
+            border-color: #C1AA8D;
+        }
+
+        .eiei {
+            margin-left: 100px;
+            height: 10px;
+            padding-bottom: 10re;
+            
+            
+        }
+        .boxy {
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+            width: 360px;
+            margin: 2rem auto;
+            height: 560px;
+            border-radius: 50px;
+
+        }
+        input[type="text"] {
+            height: 30px;
+            width: 300px;
+            margin-top: 10px;
+        }
+        
+        input[type="password"] {
+            height: 30px;
+            width: 300px;
+            margin-top: 10px;
+        }
+
+        .buttontop {
+            /* margin-left: 150px;
+            margin-top: 20px; */
+            padding: 5px;
+            background-color: #C1AA8D;
+            color: black;
+            border-color: #C1AA8D;
+            border-radius: 4px;
+            /* margin-left: 150px;
+            background-color: bisque;
+            color: black;
+            text-decoration: none;
+            padding: 5px;
+            border-radius: 4px; */
+            }
+
+
+        .search {
+            border: none;
+            border-radius: 4px;
+        }
+
+        .dada {
+            margin-left: 170px;
+            margin-top: 50px;
+        }
 
     </style>
+
 </head>
 
 <body>
@@ -79,8 +185,10 @@
                     <ul class="nav nav-pills justify-content-end">
                         <li class="nav-item"><a href="/menu_promotion" class="navbar-brand heading-text top">&nbsp Menu</a></li>
                         <li class="nav-item"><a href="#" class="navbar-brand heading-text top">&nbsp Table</a></li>
-                        <li class="nav-item ps-4"><a class="" href="#"><i class="fa fa-search fa-2x"
-                                    style="color:#704E3D;"></i></a></li>
+                        <div class="search">
+                            <i class="fa fa-search" style="color: #704E3D;"></i>
+                            <input type="search" name="" placeholder=" Search Menu" id=""">
+                        </div>
                         <li class="nav-item ps-4"><a class="" href="#"><i class="fa fa-shopping-cart fa-2x"
                             style="color:#704E3D;"></i></a></li>
                         {% if user.is_authenticated %}
@@ -101,7 +209,7 @@
     {% block content %}
 
     {% endblock %}
-    <!-- ด้านล่าง ฝากมาแก้ด้วยครับคิดไม่ออกล้าาาาา แป้ง: แก้แล้วๆๆ -->
+    <!--ด้านล่าง-->
     <footer class="" style="background-color: #C1AA8D;">
         <div class="row">
             <div class="col-lg-6 pt-3">

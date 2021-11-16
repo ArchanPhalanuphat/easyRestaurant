@@ -2,25 +2,38 @@
 
 
 {% block content%}
-<form action="login_process" method="post">
-    {% if messages %}
-    <div class="alert alert-danger" role="alert">
-        {% for message in messages %}
-            <h5 align="center">{{message}}</h5>
-        {% endfor %}
-    </div>
-    {% endif %}
-    {% csrf_token %}
-    <div class="form-group">
-        <label for="">Username</label>
-        <input type="text" class="form-control" name="username">
-    </div>
 
-    <div class="form-group">
-        <label for="">Password</label>
-        <input type="password" class="form-control" name="password">
-    </div>
-    <input type="submit" value="เข้าสู่ระบบ" class="btn btn-primary">
-</form>
-<a class="button top" type="button" href="/register" role="button">register</a>
+
+<div class="boxy">
+    <form action="login_process" method="post" class="box">
+        {% if messages %}
+        <div class="alert alert-danger" role="alert">
+            {% for message in messages %}
+                <h5 align="center">{{message}}</h5>
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% csrf_token %}
+        <legend class="login">
+            Easy Restaurant
+        </legend>
+        <div class="form-group">
+            <label for="">Username</label>
+            <input type="text" class="form-control" name="username" placeholder="eg.pangpntt">
+        </div>
+
+        <div class="form-group2">
+            <label for="">Password</label>
+            <input type="password" class="form-control" name="password" placeholder="********">
+        </div>
+
+        <div class="dada">
+            <a class="buttontop" type="buttonn" href="/register" role="button">register</a>
+            <input type="submit" value="เข้าสู่ระบบ" class="btn btn-primary"> 
+        </div>
+    </form>
+
+</div>
+
+<br>
 {% endblock %}
