@@ -32,4 +32,6 @@ class image_pagemenu(models.Model):
 
 class image_main(models.Model):
     image = models.ImageField(upload_to='image_main', null=True, blank=True)
-    description = models.TextField(max_length=50)
+    description = models.TextField(max_length=100)
+
+
