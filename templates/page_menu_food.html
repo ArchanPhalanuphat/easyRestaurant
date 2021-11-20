@@ -45,18 +45,30 @@
               </div>
        </div>
        <div class="row">
+              <!-- <div class="row row-cols-1 row-cols-md-3 g-4"> -->
               {% for food in menu %}
                      {% if food.genre == "food" %}
                             <div class="col-lg-4">
                                    <div class="{% cycle 'menu1' 'menu1' 'menu1' %}">
                                    <!--div class="{% cycle '' '' %}"-->
-                                          {% if food.status == False %}
+                                   <div class="col">
+                                   <div class="card h-100" style="width: 18rem;">
+                                          <div style="margin: 4px 4px 0px 4px;"><img src="{{food.image.url}}" class="card-img-top" alt="food"></div>
+                                          <div class="card-body">
+                                            <h5 class="card-title">{{food.name}}</h5>
+                                            <h5 class="card-text">{{food.price}}</h5>
+                                            <a href="#" class="button top text-center">เพิ่มลงตะกร้า</a>
+                                          </div>
+                                        </div>
+                                   <!-- </div> -->
+                            </div>
+                                          <!-- {% if food.status == False %}
                                                  <center><h5 class="status_flase">{{food.name}} {{food.price}} บาท</h5></center>
                                                  <img src="{{food.image.url}}" class="img-fluid">
                                           {% else %}
                                                  <center><h5>{{food.name}} {{food.price}} บาท</h5></center>
                                                  <img src="{{food.image.url}}" class="img-fluid">
-                                          {%endif%}
+                                          {%endif%} -->
                                    </div>
                             </div>
                      {%endif%}
