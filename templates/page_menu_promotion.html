@@ -45,7 +45,8 @@
        </div>
        <div class="row">
               {% for food in menu %}
-                     {% if food.genre == "" %}
+                     {% if food.genre == "" %} 
+                     <!-- ตรงหน้าโปรโมชั่นยังมะแน่ใจเอาการ์ดมาวางไว้ก่อน -->
                             <div class="col-lg-4">
                                    <div class="{% cycle 'menu1' 'menu2' 'menu3' %}">
                                           <div class="col">
