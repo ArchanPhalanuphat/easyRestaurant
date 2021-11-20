@@ -12,7 +12,7 @@
       <div class="form-group">
         {% csrf_token %}
           <label for="">ชื่อเมนู</label>
-          <input type="text" class="from-control" name="name"><br> 
+          <input type="text" class="from-control" name="name"><br>
           <label for="">ชนิดอาหาร</label>
           <input type="radio" id="food" name="type_food" value="food">
           <label for="html">อาหาร</label>
@@ -27,7 +27,7 @@
           <label for="" class="form-label">Image</label>
           <input id="image" type="file" name="image">
       </div>
-      <input type="submit" value="เพิ่มเมนูอาหาร" class="btn btn-primary">
+      <input type="submit" value="เพิ่มเมนูอาหาร" class="btn btn-primary" style="margin-bottom: 20px; margin-top: 20px; margin-left: 30px;">
   </form>
 
 {% endblock %}
