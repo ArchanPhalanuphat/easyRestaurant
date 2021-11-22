@@ -11,7 +11,8 @@
 {% endif %}
   <form action="add_recommend_process" method="post" enctype="multipart/form-data">
         <div class="form-group">
-            {% csrf_token %}     
+            {% csrf_token %}
+            <h2>แก้ไขรูปและเมนูแนะนำ</h2>  
             <label for="">ชื่อเมนูที่1</label>
             <input type="text" class="from-control" name="name1"><br> 
             <label for="">ราคาที่1</label>
@@ -36,7 +37,7 @@
             <input type="number" min="1" step="any" class="from-control" name="price4"><br> 
             <label for="" class="form-label">Image</label>
             <input id="image" type="file" name="image4"><br>
-      <input type="submit" value="เพิ่มเมนูอาหาร" class="btn btn-primary" style="margin-top: 20px; margin-bottom: 20px;">
+      <input type="submit" value="Edit" class="btn btn-primary" style="margin-top: 20px; margin-bottom: 20px;">
     </div>
   </form>
 

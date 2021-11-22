@@ -11,12 +11,13 @@
 {% endif %}
     <form action="add_image_main_process" method="post" enctype="multipart/form-data">
         <div class="form-group">
-            {% csrf_token %}     
+            {% csrf_token %}
+            <h2>แก้ไขรูปใหญ่และใส่คำบรรยาย</h2>   
             <label for="" class="form-label">Image</label>
             <input id="image" type="file" name="image"><br>
             <label for="">คำอธิบาย</label>
             <input type="text" class="from-control" name="description"> 
-        <input type="submit" value="เพิ่มเมนูอาหาร" class="btn btn-primary" style="margin-bottom: 20px; margin-top: 20px;">
+        <input type="submit" value="Edit" class="btn btn-primary" style="margin-bottom: 20px; margin-top: 20px;">
     </div>
     </form>
 
