@@ -231,10 +231,7 @@
                     <ul class="nav nav-pills justify-content-end">
                         <li class="nav-item"><a href="/menu_promotion" class="navbar-brand heading-text top">&nbsp Menu</a></li>
                         <li class="nav-item"><a href="#" class="navbar-brand heading-text top">&nbsp Table</a></li>
-                        <div class="search">
-                            <i class="fa fa-search" style="color: #704E3D;"></i>
-                            <input type="search" name="" placeholder=" Search Menu" id=""">
-                        </div>
+                        <input class="searchh" type="text" placeholder="Search for menu" id="myInput" onkeyup="myFunction()">
                         <li class="nav-item ps-4"><a class="" href="#"><i class="fa fa-shopping-cart fa-2x"
                             style="color:#704E3D;"></i></a></li>
                         {% if user.is_authenticated %}
@@ -276,6 +273,38 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        function myFunction() {
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            
+            ul = document.getElementsByClassName("card-body");
+            for (i = 0; i < ul.length; i++) {
+                let txt = ul[i].textContent
+                if (txt.toUpperCase().indexOf(filter) > -1) {
+                    ul[i].style.display = "";
+                } else {
+                    ul[i].style.display = "none";
+                }
+            }console.log("search")
+            }
+        
+        
+        // function resetList(){
+        //     var input, filter, ul, li, a, i;
+        //     input = document.getElementById("myInput");
+        //     filter = input.value.toUpperCase();
+        //     ul = document.getElementById("myUL");
+        //     li = ul.getElementsByTagName("li");
+        //     for (i = 0; i < li.length; i++) {
+        //         li[i].style.display = "none";
+        //     }
+        // }
+        
+        // resetList();
+        </script>
 
 </body>
 
