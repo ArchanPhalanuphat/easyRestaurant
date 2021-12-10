@@ -9,9 +9,9 @@
         {% endfor %}
     </div>
 {% endif %}
-<div style="background-image: https://cdn.pixabay.com/photo/2021/01/18/12/49/ice-cream-5928048_960_720.jpg">
+<div class="background">
     <form action="add_image_main_process" method="post" enctype="multipart/form-data">
-        <div class="form-group">
+        <div class="form-group" style="background-color: #A8BAA9;">
             {% csrf_token %}
             <h2>แก้ไขรูปใหญ่และใส่คำบรรยาย</h2>   
             <label for="" class="form-label">Image</label>
