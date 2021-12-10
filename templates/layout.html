@@ -280,7 +280,7 @@
             input = document.getElementById("myInput");
             filter = input.value.toUpperCase();
             
-            ul = document.getElementsByClassName("card-body");
+            ul = document.getElementsByClassName("card");
             for (i = 0; i < ul.length; i++) {
                 let txt = ul[i].textContent
                 if (txt.toUpperCase().indexOf(filter) > -1) {
