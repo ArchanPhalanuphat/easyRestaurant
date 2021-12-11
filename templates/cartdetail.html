@@ -1,0 +1,19 @@
+{% extends 'layout.html'%}
+
+
+{% block content%}
+    {% for item in cart_item %}
+        <!--รูปภาพ-->
+        <img src="{{item.product.image.url}}" alt="" width="150px" height="150px">
+        <!--ชื่ออาหาร-->
+        <p>{{item.product.name}}</p>
+        <!--ราคาต่อชิ้น-->
+        <p>{{item.product.price}}</p>
+        <!--จำนวน-->
+        <p>{{item.quantity}}</p>
+        <!--ราคา*จำนวน-->
+        <p>{{item.sub_total}}</p>
+        <!--ปุ่มลบ-->
+        <a class="cart_quantity_delete" onclick="return confirm('คุณต้องการลบสินค้าออกจากตะกร้าหรือไม่ ?')" href="{% url 'removecart' item.product.id %}"><i class="fa fa-times"></i></a>
+    {% endfor %}
+{% endblock %}
