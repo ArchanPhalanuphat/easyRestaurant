@@ -26,7 +26,6 @@ class image_promotion(models.Model):
     name4 = models.CharField(max_length=20)
     price4 = models.DecimalField(max_digits=8, decimal_places=2)
 
-
 class image_pagemenu(models.Model):
     image = models.ImageField(upload_to='image_pagemanu', null=True, blank=True)
 
@@ -34,4 +33,18 @@ class image_main(models.Model):
     image = models.ImageField(upload_to='image_main', null=True, blank=True)
     description = models.TextField(max_length=100)
 
+class Cart(models.Model):
+    cart_id = models.CharField(max_length=255, blank=True)
+    date_added = models.DateTimeField(auto_now_add=True)
+    def __str__(self):
+        return self.cart_id
+
+class CartItem(models.Model):
+    product = models.ForeignKey(Menu, on_delete=models.CASCADE)
+    cart = models.ForeignKey(Cart, on_delete=models.CASCADE)
+    quantity = models.IntegerField()
+    def sub_total(item):
+        return item.product.price * item.quantity    
+    def __str__(self):
+        return self.product.name
 
