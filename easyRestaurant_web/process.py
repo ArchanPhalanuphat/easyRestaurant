@@ -1,8 +1,10 @@
 from django.contrib import messages
+from django.contrib.admin.decorators import action
+from django.db.models.aggregates import Count
 from django.http import HttpResponse, response
 from django.contrib.auth.models import User,auth
-from django.shortcuts import redirect, render
-from easyRestaurant_web.models import Menu
+from django.shortcuts import get_object_or_404, redirect, render
+from easyRestaurant_web.models import Cart, CartItem, Menu
 from easyRestaurant_web.models import image_promotion
 from easyRestaurant_web.models import image_pagemenu
 from easyRestaurant_web.models import image_main
@@ -129,3 +131,52 @@ def add_image_main_process(request):
     add_main.save()
     messages.info(request, 'complate')
     return redirect('/add_image_main')
+
+def cartid(request):
+    cart = request.session.session_key
+    if not cart:
+        cart = request.session.create()
+    return cart
+
+def add_cart(request, menu_id):
+    product = Menu.objects.get(id=menu_id)
+    try:
+        cart = Cart.objects.get(cart_id=cartid(request))
+    except Cart.DoesNotExist:
+        cart = Cart.objects.create(cart_id=cartid(request))
+        cart.save()
+
+    try:
+        cart_item = CartItem.objects.get(product=product, cart=cart)
+        cart_item.quantity += 1
+        cart_item.save()
+
+    except CartItem.DoesNotExist:
+        cart_item = CartItem.objects.create(
+            product = product,
+            cart = cart,
+            quantity = 1
+        )
+        cart_item.save()
+    return redirect('/menu_food')
+
+def cartdetail(request):
+    total = 0
+    counter = 0
+    cart_item = None
+    try:
+        cart = Cart.objects.get(cart_id=cartid(request))
+        cart_item = CartItem.objects.filter(cart=cart)
+        for item in cart_item:
+            total += item.product.price*item.quantity
+            counter += int(item.quantity)
+    except Exception as e:
+        pass
+    return render(request, 'cartdetail.html', dict(total=total, counter=counter, cart_item=cart_item))
+
+def removecart(request, product_id):
+    cart = Cart.objects.get(cart_id=cartid(request))
+    product = get_object_or_404(Menu, id=product_id)
+    cartitem = CartItem.objects.get(product=product, cart=cart)
+    cartitem.delete()
+    return redirect('/cartdetail')

@@ -41,6 +41,9 @@ urlpatterns = [
     path('image_pagemenu_process', process.image_pagemenu_process),
     path('add_image_main', views.add_image_main),
     path('add_image_main_process', process.add_image_main_process),
+    path('cart/addmenu<menu_id>', process.add_cart, name="add_cart"),
+    path('cartdetail', process.cartdetail),
+    path('cart/remove<product_id>', process.removecart, name="removecart")
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

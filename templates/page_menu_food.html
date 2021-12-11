@@ -11,13 +11,13 @@
        <div class="row pt-5">
               <div class="col-lg-6 mb-5">
                      <div class="row">
-                            <div class="col-lg-3">
+                            <!-- <div class="col-lg-3">
                                    <div class="containner-fluid ps-5">
                                           <center>
                                               <a class="button top" href="/menu_promotion" style="text-align: center;">โปรโมชั่น</a>
                                           </center>
                                    </div>
-                            </div>
+                            </div> -->
                             <div class="col-lg-3">
                                    <div class="containner-fluid ps-4">
                                           <center>
@@ -58,7 +58,7 @@
                                           <div class="card-body">
                                             <h5 class="card-title">{{food.name}}</h5>
                                             <h5 class="card-text">{{food.price}}</h5>
-                                            <a href="#" class="button top text-center">เพิ่มลงตะกร้า</a>
+                                            <a href="{% url 'add_cart' food.id %}" class="button top text-center">เพิ่มลงตะกร้า</a>
                                           </div>
                                         </div>
                                    <!-- </div> -->
