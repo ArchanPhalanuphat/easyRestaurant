@@ -51,7 +51,8 @@ def page_user(request):
     return render(request, 'page_user.html')
 
 def add_manu(request):
-    return render(request, 'add_menu.html')
+    data = Menu.objects.all()
+    return render(request, 'add_menu.html', {'menu':data})
 
 def add_recommend(request):
     return render(request, 'add_recommend.html')
@@ -61,3 +62,4 @@ def pagemenu(request):
 
 def add_image_main(request):
     return render(request, 'add_image_main.html')
+

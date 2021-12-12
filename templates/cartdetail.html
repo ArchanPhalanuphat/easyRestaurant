@@ -16,4 +16,6 @@
         <!--ปุ่มลบ-->
         <a class="cart_quantity_delete" onclick="return confirm('คุณต้องการลบสินค้าออกจากตะกร้าหรือไม่ ?')" href="{% url 'removecart' item.product.id %}"><i class="fa fa-times"></i></a>
     {% endfor %}
+    <!--ยอดรวม-->
+    <p>{{total}}</p>
 {% endblock %}

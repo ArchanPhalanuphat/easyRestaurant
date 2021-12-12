@@ -43,7 +43,8 @@ urlpatterns = [
     path('add_image_main_process', process.add_image_main_process),
     path('cart/addmenu<menu_id>', process.add_cart, name="add_cart"),
     path('cartdetail', process.cartdetail),
-    path('cart/remove<product_id>', process.removecart, name="removecart")
+    path('cart/remove/<product_id>', process.removecart, name="removecart"),
+    path('add_menu/remove/<menu_id>', process.removemenu, name="removemenu")
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

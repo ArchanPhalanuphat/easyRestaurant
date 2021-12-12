@@ -158,7 +158,12 @@ def add_cart(request, menu_id):
             quantity = 1
         )
         cart_item.save()
-    return redirect('/menu_food')
+    if product.genre == "food":
+        return redirect('/menu_food')
+    elif product.genre == "dessert":
+        return redirect('/menu_dessert')
+    elif product.genre == "drink":
+        return redirect('/menu_drink')
 
 def cartdetail(request):
     total = 0
@@ -180,3 +185,9 @@ def removecart(request, product_id):
     cartitem = CartItem.objects.get(product=product, cart=cart)
     cartitem.delete()
     return redirect('/cartdetail')
+
+def removemenu(request, menu_id):
+    menu = Menu.objects.get(id = menu_id)
+    menu.delete()
+    messages.info(request, 'ลบเรียบร้อย')
+    return redirect('/add_menu')
