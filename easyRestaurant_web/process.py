@@ -108,17 +108,7 @@ def add_recommend_process(request):
     )
     image_promo.save()
     messages.info(request, 'Complete')
-    return redirect('/add_recommend')
-
-def image_pagemenu_process(request):
-    if len(request.FILES) != 0:
-        image = request.FILES['image']
-    page_menu = image_pagemenu(
-        image = image
-    )
-    page_menu.save()
-    messages.info(request, 'Complete')
-    return redirect('/pagemenu')
+    return redirect('/add_image_main')
 
 def add_image_main_process(request):
     if len(request.FILES) != 0:
@@ -127,6 +117,16 @@ def add_image_main_process(request):
     add_main = image_main(
         image = image,
         description = description
+    )
+    add_main.save()
+    messages.info(request, 'complate')
+    return redirect('/add_image_main')
+
+def add_image_pagemenu_process(request):
+    if len(request.FILES) != 0:
+        image = request.FILES['image']
+    add_main = image_pagemenu(
+        image = image
     )
     add_main.save()
     messages.info(request, 'complate')
@@ -191,3 +191,36 @@ def removemenu(request, menu_id):
     menu.delete()
     messages.info(request, 'ลบเรียบร้อย')
     return redirect('/add_menu')
+
+def edit_image_main(request):
+    new = get_object_or_404(image_main)
+    new.description = request.POST.get('description')
+    new.image = request.FILES['image']
+    new.save()
+    messages.info(request, 'complate')
+    return redirect('/add_image_main')
+
+def edit_recommend(request):
+    new = get_object_or_404(image_promotion)
+    new.name1 = request.POST.get('name1')
+    new.price1 = request.POST.get('price1')
+    new.image1 = request.FILES['image1']
+    new.name2 = request.POST.get('name2')
+    new.price2 = request.POST.get('price2')
+    new.image2 = request.FILES['image2']
+    new.name3 = request.POST.get('name3')
+    new.price3 = request.POST.get('price3')
+    new.image3 = request.FILES['image3']
+    new.name4 = request.POST.get('name4')
+    new.price4 = request.POST.get('price4')
+    new.image4 = request.FILES['image4']
+    new.save()
+    messages.info(request, 'complate')
+    return redirect('/add_image_main')
+
+def edit_image_menu(request):
+    new = get_object_or_404(image_main)
+    new.image = request.FILES['image']
+    new.save()
+    messages.info(request, 'complate')
+    return redirect('/add_image_main')

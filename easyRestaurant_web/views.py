@@ -61,5 +61,9 @@ def pagemenu(request):
     return render(request, 'pagemenu.html')
 
 def add_image_main(request):
-    return render(request, 'add_image_main.html')
+    images_main = image_main.objects.all()
+    images_promotion = image_promotion.objects.all()
+    images_pagemenu = image_pagemenu.objects.all()
+    return render(request, 'add_image_main.html', {'image_bg':images_main, 'image_promo':images_promotion, 'image_menu':images_pagemenu})
+
 

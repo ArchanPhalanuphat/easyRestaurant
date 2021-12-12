@@ -9,75 +9,150 @@
         {% endfor %}
     </div>
 {% endif %}
-<div class="background">
-    <form action="add_image_main_process" method="post" enctype="multipart/form-data">
-        <div class="center">
-        <div class="form-group" style="background-color: #A8BAA9; margin-left: 50px;">
-            {% csrf_token %}
-            <div class="form">
-            <h2>แก้ไขรูปใหญ่และใส่คำบรรยาย</h2>   
-            <label for="" class="form-label">Image</label>
-            <input id="image" type="file" name="image"><br>
-            <label for="">คำอธิบาย</label>
-            <input type="text" class="from-control" name="description"> 
-        <input type="submit" value="Edit" class="btn btn-primary" style="margin-bottom: 20px; margin-top: 20px;">
+{% if not image_bg %}
+    <div class="background">
+        <form action="add_image_main_process" method="post" enctype="multipart/form-data">
+            <div class="center">
+                <div class="form-group" style="background-color: #A8BAA9; margin-left: 50px;">
+                    {% csrf_token %}
+                    <div class="form">
+                        <h2>เพิ่มรูปใหญ่และใส่คำบรรยาย</h2>   
+                        <label for="" class="form-label">Image</label>
+                        <input id="image" type="file" name="image"><br>
+                        <label for="">คำอธิบาย</label>
+                        <input type="text" class="from-control" name="description"> 
+                        <input type="submit" value="save" class="btn btn-primary" style="margin-bottom: 20px; margin-top: 20px;">
+                    </div>
+                </div>
+            </div>
+        </form>
     </div>
+{% elif image_bg != None %}
+    <div class="background">
+        <form action="edit_image_main" method="post" enctype="multipart/form-data">
+            <div class="center">
+                <div class="form-group" style="background-color: #A8BAA9; margin-left: 50px;">
+                    {% csrf_token %}
+                    <div class="form">
+                        <h2>แก้ไขรูปใหญ่และใส่คำบรรยาย</h2>   
+                        <label for="" class="form-label">Image</label>
+                        <input id="image" type="file" name="image"><br>
+                        <label for="">คำอธิบาย</label>
+                        <input type="text" class="from-control" name="description">
+                        <input type="submit" value="edit" class="btn btn-primary" style="margin-bottom: 20px; margin-top: 20px;">
+                    </div>
+                </div>
+            </div>
+        </form>
     </div>
-</div>
-    </form>
-</div>
+{% endif %}
 
-<div class="background2">
-    <form action="add_recommend_process" method="post" enctype="multipart/form-data">
-        <div class="center">
-        <div class="form-group" style="background-color: #DBCDAD;">
-            {% csrf_token %}
-            <div class="form">
-            <h2>แก้ไขรูปและเมนูแนะนำ</h2>
-            <label for="">ชื่อเมนูที่1</label>
-            <input type="text" class="from-control" name="name1"><br> 
-            <label for="">ราคาที่1 &nbsp</label>
-            <input type="number" min="1" step="any" class="from-control" name="price1"><br> 
-            <label for="" class="form-label">Image</label>
-            <input id="image" type="file" name="image1"><br>
-            <label for="">ชื่อเมนูที่2</label>
-            <input type="text" class="from-control" name="name2"><br> 
-            <label for="">ราคาที่2 &nbsp</label>
-            <input type="number" min="1" step="any" class="from-control" name="price2"><br> 
-            <label for="" class="form-label">Image</label>
-            <input id="image" type="file" name="image2"><br>
-            <label for="">ชื่อเมนูที่3</label>
-            <input type="text" class="from-control" name="name3"><br> 
-            <label for="">ราคาที่3 &nbsp</label>
-            <input type="number" min="1" step="any" class="from-control" name="price3"><br> 
-            <label for="" class="form-label">Image</label>
-            <input id="image" type="file" name="image3"><br>
-            <label for="">ชื่อเมนูที่4</label>
-            <input type="text" class="from-control" name="name4"><br> 
-            <label for="">ราคาที่4 &nbsp</label>
-            <input type="number" min="1" step="any" class="from-control" name="price4"><br> 
-            <label for="" class="form-label">Image</label>
-            <input id="image" type="file" name="image4"><br>
-      <input type="submit" value="Edit" class="btn btn-primary" style="margin-top: 20px; margin-bottom: 20px;">
+{% if not image_promo %}
+    <div class="background2">
+        <form action="add_recommend_process" method="post" enctype="multipart/form-data">
+            <div class="center">
+                <div class="form-group" style="background-color: #DBCDAD;">
+                    {% csrf_token %}
+                    <div class="form">
+                    <h2>เพิ่มรูปและเมนูแนะนำ</h2>
+                    <label for="">ชื่อเมนูที่1</label>
+                    <input type="text" class="from-control" name="name1"><br> 
+                    <label for="">ราคาที่1 &nbsp</label>
+                    <input type="number" min="1" step="any" class="from-control" name="price1"><br> 
+                    <label for="" class="form-label">Image</label>
+                    <input id="image" type="file" name="image1"><br>
+                    <label for="">ชื่อเมนูที่2</label>
+                    <input type="text" class="from-control" name="name2"><br> 
+                    <label for="">ราคาที่2 &nbsp</label>
+                    <input type="number" min="1" step="any" class="from-control" name="price2"><br> 
+                    <label for="" class="form-label">Image</label>
+                    <input id="image" type="file" name="image2"><br>
+                    <label for="">ชื่อเมนูที่3</label>
+                    <input type="text" class="from-control" name="name3"><br> 
+                    <label for="">ราคาที่3 &nbsp</label>
+                    <input type="number" min="1" step="any" class="from-control" name="price3"><br> 
+                    <label for="" class="form-label">Image</label>
+                    <input id="image" type="file" name="image3"><br>
+                    <label for="">ชื่อเมนูที่4</label>
+                    <input type="text" class="from-control" name="name4"><br> 
+                    <label for="">ราคาที่4 &nbsp</label>
+                    <input type="number" min="1" step="any" class="from-control" name="price4"><br> 
+                    <label for="" class="form-label">Image</label>
+                    <input id="image" type="file" name="image4"><br>
+                    <input type="submit" value="save" class="btn btn-primary" style="margin-top: 20px; margin-bottom: 20px;">
+                </div>
+            </div>
+        </form>
     </div>
+{% else %}
+    <div class="background2">
+        <form action="edit_recommend" method="post" enctype="multipart/form-data">
+            <div class="center">
+                <div class="form-group" style="background-color: #DBCDAD;">
+                    {% csrf_token %}
+                    <div class="form">
+                    <h2>แก้ไขรูปและเมนูแนะนำ</h2>
+                    <label for="">ชื่อเมนูที่1</label>
+                    <input type="text" class="from-control" name="name1"><br> 
+                    <label for="">ราคาที่1 &nbsp</label>
+                    <input type="number" min="1" step="any" class="from-control" name="price1"><br> 
+                    <label for="" class="form-label">Image</label>
+                    <input id="image" type="file" name="image1"><br>
+                    <label for="">ชื่อเมนูที่2</label>
+                    <input type="text" class="from-control" name="name2"><br> 
+                    <label for="">ราคาที่2 &nbsp</label>
+                    <input type="number" min="1" step="any" class="from-control" name="price2"><br> 
+                    <label for="" class="form-label">Image</label>
+                    <input id="image" type="file" name="image2"><br>
+                    <label for="">ชื่อเมนูที่3</label>
+                    <input type="text" class="from-control" name="name3"><br> 
+                    <label for="">ราคาที่3 &nbsp</label>
+                    <input type="number" min="1" step="any" class="from-control" name="price3"><br> 
+                    <label for="" class="form-label">Image</label>
+                    <input id="image" type="file" name="image3"><br>
+                    <label for="">ชื่อเมนูที่4</label>
+                    <input type="text" class="from-control" name="name4"><br> 
+                    <label for="">ราคาที่4 &nbsp</label>
+                    <input type="number" min="1" step="any" class="from-control" name="price4"><br> 
+                    <label for="" class="form-label">Image</label>
+                    <input id="image" type="file" name="image4"><br>
+                    <input type="submit" value="edit" class="btn btn-primary" style="margin-top: 20px; margin-bottom: 20px;">
+                </div>
+            </div>
+        </form>
     </div>
-  </form>
-</div>
-
-<div class="background3">
-    <form action="image_pagemenu_process" method="post" enctype="multipart/form-data">
-        <div class="center">
-        <div class="form-group" style="background-color: #A8BAA9; margin-left: 50px;">
-            {% csrf_token %}
-            <div class="form">
-            <h2>แก้ไขรูปหน้า Menu</h2> 
-            <label for="" class="form-label">Image</label>
-            <input id="image" type="file" name="image"><br>
-        
-        <input type="submit" value="เพิ่มเมนูอาหาร" class="btn btn-primary" style="margin-top: 20px; margin-bottom: 20px;">
-    </div>
+{%endif%}
+{% if not image_menu %}
+    <div class="background3">
+        <form action="image_pagemenu_process" method="post" enctype="multipart/form-data">
+            <div class="center">
+            <div class="form-group" style="background-color: #A8BAA9; margin-left: 50px;">
+                {% csrf_token %}
+                <div class="form">
+                <h2>เพิ่มรูปหน้า Menu</h2> 
+                <label for="" class="form-label">Image</label>
+                <input id="image" type="file" name="image"><br>
+            
+            <input type="submit" value="save" class="btn btn-primary" style="margin-top: 20px; margin-bottom: 20px;">
         </div>
-    </form>
-</div>
-
+            </div>
+        </form>
+    </div>
+{% else %}
+    <div class="background3">
+        <form action="edit_image_menu" method="post" enctype="multipart/form-data">
+            <div class="center">
+            <div class="form-group" style="background-color: #A8BAA9; margin-left: 50px;">
+                {% csrf_token %}
+                <div class="form">
+                <h2>แก้ไขรูปหน้า Menu</h2> 
+                <label for="" class="form-label">Image</label>
+                <input id="image" type="file" name="image"><br>
+            
+            <input type="submit" value="edit" class="btn btn-primary" style="margin-top: 20px; margin-bottom: 20px;">
+        </div>
+            </div>
+        </form>
+    </div>
+{% endif %}
 {% endblock %}

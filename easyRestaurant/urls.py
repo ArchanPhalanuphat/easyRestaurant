@@ -38,13 +38,16 @@ urlpatterns = [
     path('add_recommend', views.add_recommend),
     path('add_recommend_process', process.add_recommend_process),
     path('pagemenu', views.pagemenu),
-    path('image_pagemenu_process', process.image_pagemenu_process),
+    path('image_pagemenu_process', process.add_image_pagemenu_process),
     path('add_image_main', views.add_image_main),
     path('add_image_main_process', process.add_image_main_process),
     path('cart/addmenu<menu_id>', process.add_cart, name="add_cart"),
     path('cartdetail', process.cartdetail),
     path('cart/remove/<product_id>', process.removecart, name="removecart"),
-    path('add_menu/remove/<menu_id>', process.removemenu, name="removemenu")
+    path('add_menu/remove/<menu_id>', process.removemenu, name="removemenu"),
+    path('edit_image_main', process.edit_image_main, name="edit_image_main"),
+    path('edit_recommend', process.edit_recommend, name="edit_recomment"),
+    path('edit_image_menu', process.edit_image_menu, name="edit_image_menu")
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
