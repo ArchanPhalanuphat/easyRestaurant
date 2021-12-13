@@ -50,3 +50,4 @@ class CartItem(models.Model):
 
 class Table(models.Model):
     status = models.BooleanField(default=True)
+    
