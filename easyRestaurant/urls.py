@@ -49,7 +49,9 @@ urlpatterns = [
     path('edit_recommend', process.edit_recommend, name="edit_recomment"),
     path('edit_image_menu', process.edit_image_menu, name="edit_image_menu"),
     path('table', views.table),
-    path('add_table', process.add_table, name="add_table")
+    path('add_table', process.add_table, name="add_table"),
+    path('changetable/<table_id>', process.changetable, name="changetable"),
+    path('table_user', views.table_user)
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
