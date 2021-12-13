@@ -13,9 +13,9 @@
     <div class="background">
         <form action="add_image_main_process" method="post" enctype="multipart/form-data">
             <div class="center">
-                <div class="form-group" style="background-color: #A8BAA9; margin-left: 50px;">
+                <div class="form-group" id= "kob1" style="background-color: #A8BAA9; margin-left: 50px;">
                     {% csrf_token %}
-                    <div class="form">
+                    <div class="form" id= "seefah1">
                         <h2>เพิ่มรูปใหญ่และใส่คำบรรยาย</h2>   
                         <label for="" class="form-label">Image</label>
                         <input id="image" type="file" name="image"><br>
@@ -51,7 +51,7 @@
     <div class="background2">
         <form action="add_recommend_process" method="post" enctype="multipart/form-data">
             <div class="center">
-                <div class="form-group" style="background-color: #DBCDAD;">
+                <div class="form-group" id= "kob2" style="background-color: #DBCDAD;">
                     {% csrf_token %}
                     <div class="form">
                     <h2>เพิ่มรูปและเมนูแนะนำ</h2>
