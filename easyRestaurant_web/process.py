@@ -8,6 +8,8 @@ from easyRestaurant_web.models import Cart, CartItem, Menu
 from easyRestaurant_web.models import image_promotion
 from easyRestaurant_web.models import image_pagemenu
 from easyRestaurant_web.models import image_main
+from easyRestaurant_web.models import Table
+from easyRestaurant_web.views import table
 
 
 def register_process(request):
@@ -224,3 +226,13 @@ def edit_image_menu(request):
     new.save()
     messages.info(request, 'complate')
     return redirect('/add_image_main')
+
+def add_table(request):
+    status = True
+    new = Table(
+        status = status
+    )
+    new.save()
+    messages.info(request, 'เพิ่มโต๊ะเรียบร้อย')
+    return redirect('/table')
+

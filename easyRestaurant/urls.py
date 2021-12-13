@@ -47,7 +47,9 @@ urlpatterns = [
     path('add_menu/remove/<menu_id>', process.removemenu, name="removemenu"),
     path('edit_image_main', process.edit_image_main, name="edit_image_main"),
     path('edit_recommend', process.edit_recommend, name="edit_recomment"),
-    path('edit_image_menu', process.edit_image_menu, name="edit_image_menu")
+    path('edit_image_menu', process.edit_image_menu, name="edit_image_menu"),
+    path('table', views.table),
+    path('add_table', process.add_table, name="add_table")
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
