@@ -69,3 +69,7 @@ def add_image_main(request):
 def table(request):
     data = Table.objects.all()
     return render(request, 'table.html', {'tables':data})
+
+def table_user(request):
+    data = Table.objects.all()
+    return render(request, 'table_user.html ', {'tables':data})

@@ -13,6 +13,7 @@
     <style>
         .heading-text {
             color: #704E3D;
+
         }
 
         .button {
@@ -295,7 +296,7 @@
         }
         
 
-        @media screen and (max-width: 400px) {
+        @media screen and (max-width: 576px) {
             * {
                 margin: 0;
                 padding: 0;
@@ -303,12 +304,13 @@
 
             .btn-1 {
                 width: 100%;
-                background: blue;
+                background: #C1AA8D;
                 margin-left: 1px;
                 height: 70px;
                 margin-top: 20px;
                 padding: 15px;
                 margin-bottom: 10px;
+                font-size: medium;
                 
             }
             .nav-item {
@@ -346,10 +348,17 @@
             html {
                 flex-direction: column;
             }
+            footer {
+                width: 85%;
+            }
+            .navbar.navbar-expand-lg.row {
+                width: 103%;
+            }
+
         html {
             font-size: calc(60% + 0.8vmin);
         }
-        @media screen and (max-width: 400px) {
+        /*@media screen and (max-width: 400px) {
             .form-group {
                 width: 85vw;
             }
@@ -372,6 +381,25 @@
             }
             footer {
                 padding-right: 100px;
+            }
+        }*/
+        @media (min-width:768px) {
+            .btn-1 {
+                max-width: 720px;
+                padding-top: 10px;
+                width: 100%;
+                height: 70px;
+            }
+        }
+        @media (min-width: 576px) {
+            * {
+                padding: 0;
+                margin: 0;
+            }
+            
+            
+            .btn-1 {
+                max-width: 540px;
             }
         }
 
@@ -405,7 +433,7 @@
                 <div class="row">
                     <ul class="nav nav-pills justify-content-end">
                         <li class="nav-item"><a href="/menu_food" class="navbar-brand heading-text top">&nbsp Menu</a></li>
-                        <li class="nav-item"><a href="/table" class="navbar-brand heading-text top">&nbsp Table</a></li>
+                        <li class="nav-item"><a href="/table_user" class="navbar-brand heading-text top">&nbsp Table</a></li>
                         <input class="searchh" type="text" placeholder="Search for menu" id="myInput" onkeyup="myFunction()">
                         <li class="nav-item ps-4"><a class="" href="/cartdetail"><i class="fa fa-shopping-cart fa-2x"
                             style="color:#704E3D;"></i></a></li>

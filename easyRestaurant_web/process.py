@@ -236,3 +236,12 @@ def add_table(request):
     messages.info(request, 'เพิ่มโต๊ะเรียบร้อย')
     return redirect('/table')
 
+def changetable(request, table_id):
+    table = Table.objects.get(id=table_id)
+    if table.status == True:
+        table.status = False
+    elif table.status == False:
+        table.status = True
+    table.save()
+    messages.info(request, 'complate')
+    return redirect('/table')

@@ -17,14 +17,14 @@
     <div class="col-lg-4"  style="min-height: 100vh;">
         <div class="{% cycle 'menu1' 'menu2' 'menu3' %}">
            <div class="col">
-                <h5>{{table.id}}</h5>
+                <h5>โต๊ะที่{{table.id}}</h5>
                 {% if table.status == True %}
                     <h5>โต๊ะว่าง</h5>
                 {% else %}
                     <h5>โต๊ะไม่ว่าง</h5>
                 {%endif%}
-                <input type="checkbox" id="status" name="status" value="have">
-                <label for="">สถานะ</label><br>
+                <h5>เปลี่ยนสถานะของโต๊ะ {{table.id}}</h5>
+                <a href="{% url 'changetable' table.id %}"><i class="fa fa-exchange"></i></a>
            </div>
         </div>
     </div>
