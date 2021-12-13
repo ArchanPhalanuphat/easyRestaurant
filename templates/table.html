@@ -1,0 +1,32 @@
+{% extends 'layout.html'%}
+
+{% block content%}
+<form action="add_table" method="post" enctype="multipart/form-data">
+    {% if messages %}
+    <div class="alert alert-danger" role="alert">
+        {% for message in messages %}
+            <h5 align="center">{{message}}</h5>
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% csrf_token %}
+    <label for="">เพิ่มโต๊ะ</label>
+    <input type="submit" value="Add table" class="btn btn-primary" style="margin-bottom: 20px; margin-top: 20px;">
+</form>
+    {% for table in tables %}
+    <div class="col-lg-4"  style="min-height: 100vh;">
+        <div class="{% cycle 'menu1' 'menu2' 'menu3' %}">
+           <div class="col">
+                <h5>{{table.id}}</h5>
+                {% if table.status == True %}
+                    <h5>โต๊ะว่าง</h5>
+                {% else %}
+                    <h5>โต๊ะไม่ว่าง</h5>
+                {%endif%}
+                <input type="checkbox" id="status" name="status" value="have">
+                <label for="">สถานะ</label><br>
+           </div>
+        </div>
+    </div>
+    {% endfor %}
+{% endblock %}

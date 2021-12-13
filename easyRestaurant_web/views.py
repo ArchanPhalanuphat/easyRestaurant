@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.models import User
-from .models import Menu
+from .models import Menu, Table
 from .models import image_promotion
 from .models import image_pagemenu
 from .models import image_main
@@ -66,4 +66,6 @@ def add_image_main(request):
     images_pagemenu = image_pagemenu.objects.all()
     return render(request, 'add_image_main.html', {'image_bg':images_main, 'image_promo':images_promotion, 'image_menu':images_pagemenu})
 
-
+def table(request):
+    data = Table.objects.all()
+    return render(request, 'table.html', {'tables':data})
