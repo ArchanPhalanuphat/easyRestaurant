@@ -2,62 +2,58 @@
 
 
 {% block content%}
-  <form action="addmenu_process" method="post" enctype="multipart/form-data">
-    {% if messages %}
-      <div class="alert alert-danger" role="alert">
-          {% for message in messages %}
-              <h5 align="center">{{message}}</h5>
-          {% endfor %}
+<form action="addmenu_process" method="post" enctype="multipart/form-data">
+  {% if messages %}
+  <div class="alert alert-danger" role="alert">
+    {% for message in messages %}
+    <h5 align="center">{{message}}</h5>
+    {% endfor %}
     {%endif%}
     <div class="container"></div>
     <div class="background4">
       <div class="form-group1"">
-        <div class="center">
+        <div class=" center">
         {% csrf_token %}
-          <h2>เพิ่มและแก้ไขเมนูอาหาร</h2>
-          <label for="">ชื่อเมนู</label>
-          <input type="text" class="from-control" name="name"><br>
-          <label for="">ชนิดอาหาร</label>
-          <input type="radio" id="food" name="type_food" value="food">
-          <label for="html">อาหาร</label>
-          <input type="radio" id="drink" name="type_food" value="drink">
-          <label for="css">เครื่องดื่ม</label>
-          <input type="radio" id="dessert" name="type_food" value="dessert">
-          <label for="javascript">ของหวาน</label>
-          <label for="">ราคา</label>
-          <input type="number" min="1" step="any" class="from-control" name="price"><br> 
-          <input type="checkbox" id="status" name="status" value="have">
-          <label for="">สถานะ</label><br>
-          <label for="" class="form-label">Image</label>
-          <input id="image" type="file" name="image">
-      <input type="submit" value="Add menu" class="btn btn-primary" style="margin-bottom: 20px; margin-top: 20px;">
-    </div>
+        <h2>เพิ่มและแก้ไขเมนูอาหาร</h2>
+        <label for="">ชื่อเมนู</label>
+        <input type="text" class="from-control" name="name"><br>
+        <label for="">ชนิดอาหาร</label>
+        <input type="radio" id="food" name="type_food" value="food">
+          <label for="html">อาหาร</label>
+          <input type="radio" id="drink" name="type_food" value="drink">
+          <label for="css">เครื่องดื่ม</label>
+          <input type="radio" id="dessert" name="type_food" value="dessert">
+          <label for="javascript">ของหวาน</label><br>
+        <label for="">ราคา</label>
+        <input type="number" min="1" step="any" class="from-control" name="price"><br>
+        <input type="checkbox" id="status" name="status" value="have">
+        <label for="">สถานะ</label><br>
+        <label for="" class="form-label">Image</label>
+        <input id="image" type="file" name="image">
+        <input type="submit" value="Add menu" class="btn btn-primary" style="margin-bottom: 20px; margin-top: 20px;">
+      </div>
     </div>
   </div>
-  <div class="row">
-    {%for food in menu%}
-      <div class="col-lg-4"  style="min-height: 100vh;">
+  <div class="container">
+    <div class="row">
+      {%for food in menu%}
+      <div class="col-lg-4">
         <div class="{% cycle 'menu1' 'menu2' 'menu3' %}">
-              <div class="col">
-                      <div class="card h-100" style="width: 18rem;">
-                            <div style="margin: 4px 4px 0px 4px;"><img src="{{food.image.url}}" class="card-img-top" alt="food"></div>
-                            <div class="card-body">
-                              <h5 class="card-title">{{food.name}}</h5>
-                              <h5 class="card-text">{{food.price}}</h5>
-                              <a class="cart_quantity_delete" onclick="return confirm('คุณต้องการลบเมนูหรือไม่ ?')" href="{% url 'removemenu' food.id %}"><i class="fa fa-times"></i></a>
-                            </div>
-                      </div>
-                <!-- {% if food.status == False %}
-                        <center><h5 class="status_flase">{{food.name}} {{food.price}} บาท</h5></center>
-                        <img src="{{food.image.url}}" class="img-fluid">
-                {% else %}
-                        <center><h5>{{food.name}} {{food.price}} บาท</h5></center>
-                        <img src="{{food.image.url}}" class="img-fluid">
-                {%endif%} -->
+          <div class="col">
+            <div class="card h-100">
+              <div style="margin: 4px 4px 0px 4px;"><img src="{{food.image.url}}" class="card-img-top" alt="food"></div>
+              <div class="card-body">
+                <h5 class="card-title">{{food.name}}</h5>
+                <h5 class="card-text">{{food.price}}</h5>
+                <a class="cart_quantity_delete" onclick="return confirm('คุณต้องการลบเมนูหรือไม่ ?')"
+                  href="{% url 'removemenu' food.id %}"><i class="fa fa-times"></i></a>
               </div>
+            </div>
+          </div>
         </div>
-    {%endfor%}
-  </div>
+      </div>
+      {%endfor%}
+    </div>
 </form>
 
 {% endblock %}
