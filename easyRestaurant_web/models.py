@@ -52,7 +52,7 @@ class Table(models.Model):
     status = models.BooleanField(default=True)
 
 class Order(models.Model):
-    table = models.IntegerField(max_length=1000)
+    table = models.IntegerField()
     total = models.DecimalField(max_digits=8, decimal_places=2)
     email = models.EmailField(max_length=250, blank=True)
 

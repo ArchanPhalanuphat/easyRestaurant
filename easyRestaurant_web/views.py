@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.models import User
-from .models import Menu, Order, OrderItem, Table
+from .models import Cart, CartItem, Menu, Order, OrderItem, Table
 from .models import image_promotion
 from .models import image_pagemenu
 from .models import image_main
@@ -75,6 +75,7 @@ def table_user(request):
     return render(request, 'table_user.html ', {'tables':data})
 
 def order(request):
-    data = OrderItem.objects.all()
-    data2 = Order.objects.all()
-    return render(request, 'page_menu_promotion.html', {'items':data, 'orders':data2})
+    data = CartItem.objects.all()
+    data2 = Cart.objects.all()
+    print(data, data2)
+    return render(request, 'order.html', {'items':data, 'orders':data2})
