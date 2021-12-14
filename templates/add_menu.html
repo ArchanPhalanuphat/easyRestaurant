@@ -14,7 +14,7 @@
       <div class="form-group1"">
         <div class=" center">
         {% csrf_token %}
-        <h2>เพิ่มและแก้ไขเมนูอาหาร</h2>
+        <h2>เพิ่มเมนูอาหาร</h2>
         <label for="">ชื่อเมนู</label>
         <input type="text" class="from-control" name="name"><br>
         <label for="">ชนิดอาหาร</label>
@@ -34,6 +34,7 @@
       </div>
     </div>
   </div>
+  <h2 style="text-align: center; color: #704E3D; margin-top: 50px;">ลบเมนูอาหาร</h2>
   <div class="container">
     <div class="row">
       {%for food in menu%}
