@@ -3,21 +3,22 @@
 
 {% block content%}
 {% if messages %}
-    <div class="alert alert-danger" role="alert">
-        {% for message in messages %}
-            <h5 align="center">{{message}}</h5>
-        {% endfor %}
-    </div>
+<div class="alert alert-danger" role="alert">
+    {% for message in messages %}
+    <h5 align="center">{{message}}</h5>
+    {% endfor %}
+</div>
 {% endif %}
-    <form action="image_pagemenu_process" method="post" enctype="multipart/form-data">
-        <div class="center">
+<form action="image_pagemenu_process" method="post" enctype="multipart/form-data">
+    <div class="center">
         <div class="form-group">
-            {% csrf_token %}     
+            {% csrf_token %}
             <label for="" class="form-label">Image</label>
             <input id="image" type="file" name="image"><br>
-        
-        <input type="submit" value="เพิ่มเมนูอาหาร" class="btn btn-primary" style="margin-top: 20px; margin-bottom: 20px;">
+
+            <input type="submit" value="เพิ่มเมนูอาหาร" class="btn btn-primary"
+                style="margin-top: 20px; margin-bottom: 20px;">
         </div>
-    </form>
+</form>
 
 {% endblock %}

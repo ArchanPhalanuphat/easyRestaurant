@@ -4,11 +4,11 @@
 {% block content%}
 
 {% if messages %}
-    <div class="alert alert-danger" role="alert">
-        {% for message in messages %}
-            <h5 align="center">{{message}}</h5>
-        {% endfor %}
-    </div>
+<div class="alert alert-danger" role="alert">
+    {% for message in messages %}
+    <h5 align="center">{{message}}</h5>
+    {% endfor %}
+</div>
 {% endif %}
 
 
@@ -44,7 +44,7 @@
         <input type="email" class="form-control" name="email">
     </div>
 
-    <input type="submit" value="ลงทะเบียน" class="btn btn-primary" 
-    style="margin-bottom: 50px; margin-top: 50px; margin-left: 30px;">
+    <input type="submit" value="ลงทะเบียน" class="btn btn-primary"
+        style="margin-bottom: 50px; margin-top: 50px; margin-left: 30px;">
 </form>
 {% endblock %}

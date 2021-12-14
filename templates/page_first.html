@@ -17,14 +17,13 @@
                 {% for data in datas %}
                 <!--img_main-->
                 <div class="card border-light" style="width: 35rem;">
-                    <img src="{{data.image.url}}" 
-                    class="card-img-top" alt="food_left" height="550">
+                    <img src="{{data.image.url}}" class="card-img-top" alt="food_left" height="550">
                     <div class="card-body pt-4 ">
                         <h4 class="card-text">{{data.description}}<br /></h4>
                     </div>
                 </div>
                 {%endfor%}
-            </center>    
+            </center>
         </div>
     </div>
     <!--ฝั่งขวา-->
@@ -39,52 +38,48 @@
         <div class="row pt-4">
             <center>
                 {% for promo in promotion %}
-                    <div class="row row-cols-1 row-cols-md-2 g-4">
-                        <!--รูปซ้ายบน-->
-                        <div class="col pt-2">
+                <div class="row row-cols-1 row-cols-md-2 g-4">
+                    <!--รูปซ้ายบน-->
+                    <div class="col pt-2">
                         <div class="card border-light" style="width: 20rem;">
-                            <img src="{{promo.image1.url}}" 
-                            class="card-img-top" alt="..." width="200" height="200">
+                            <img src="{{promo.image1.url}}" class="card-img-top" alt="..." width="200" height="200">
                             <div class="card-body">
-                            <h5 class="card-title">{{promo.name1}}</h5>
-                            <p class="card-text">{{promo.price1}} BAHT</p>
+                                <h5 class="card-title">{{promo.name1}}</h5>
+                                <p class="card-text">{{promo.price1}} BAHT</p>
                             </div>
                         </div>
-                        </div>
-                        <!--รูปขวาบน-->
-                        <div class="col pt-2">
+                    </div>
+                    <!--รูปขวาบน-->
+                    <div class="col pt-2">
                         <div class="card border-light" style="width: 20rem;">
-                            <img src="{{promo.image2.url}}" 
-                            class="card-img-top" alt="..." width="200" height="200">
+                            <img src="{{promo.image2.url}}" class="card-img-top" alt="..." width="200" height="200">
                             <div class="card-body">
-                            <h5 class="card-title">{{promo.name2}}</h5>
-                            <p class="card-text">{{promo.price2}} BAHT</p>
+                                <h5 class="card-title">{{promo.name2}}</h5>
+                                <p class="card-text">{{promo.price2}} BAHT</p>
                             </div>
                         </div>
-                        </div>
-                        <!--รูปซ้ายล่าง-->
-                        <div class="col pt-4">
-                            <div class="card border-light" style="width: 20rem;">
-                            <img src="{{promo.image3.url}}" 
-                            class="card-img-top" alt="..." width="200" height="200">
+                    </div>
+                    <!--รูปซ้ายล่าง-->
+                    <div class="col pt-4">
+                        <div class="card border-light" style="width: 20rem;">
+                            <img src="{{promo.image3.url}}" class="card-img-top" alt="..." width="200" height="200">
                             <div class="card-body">
                                 <h5 class="card-title">{{promo.name3}}</h5>
                                 <p class="card-text">{{promo.price3}} BAHT</p>
                             </div>
-                            </div>
                         </div>
-                        <!--รูปขวาล่าง-->
-                        <div class="col pt-4">
-                            <div class="card border-light" style="width: 20rem;">
-                            <img src="{{promo.image4.url}}" 
-                            class="card-img-top" alt="..." width="200" height="200">
+                    </div>
+                    <!--รูปขวาล่าง-->
+                    <div class="col pt-4">
+                        <div class="card border-light" style="width: 20rem;">
+                            <img src="{{promo.image4.url}}" class="card-img-top" alt="..." width="200" height="200">
                             <div class="card-body">
                                 <h5 class="card-title">{{promo.name4}}</h5>
                                 <p class="card-text">{{promo.price4}} BAHT</p>
                             </div>
-                            </div>
                         </div>
                     </div>
+                </div>
                 {%endfor%}
             </center>
         </div>

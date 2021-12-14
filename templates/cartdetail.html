@@ -4,40 +4,39 @@
 {% block content%}
 
 <h1 style="text-align: center; margin-top: 50px; color: #704E3D;">ตะกร้าสินค้า</h1>
-<!-- <div class="container"> -->
-    <div class="row">
-        {% for item in cart_item %}
-        <div class="col-lg-4">
-            <div class="{% cycle 'menu1' 'menu2' 'menu3' %}">
-                <div class="col">
-                    <div class="card h-100">
-                        <div style="margin: 4px 4px 0px 4px;"><img src="{{item.product.image.url}}" class="card-img-top"
-                                alt="food"></div>
-                        <!--รูปภาพ-->
-                        <div class="card-body">
-                            <!--ชื่ออาหาร-->
-                            <h3 class="card-title">{{item.product.name}}</h3>
-                            <!--ราคาต่อชิ้น-->
-                            <h6 class="card-text">{{item.product.price}} บาท</h6>
-                            <!--จำนวน-->
-                            <h6 class="card-text">{{item.quantity}} ชิ้น</h6>
-                            <!--ราคา*จำนวน-->
-                            <h6 class="card-text">รวม {{item.sub_total}} บาท</h6>
-                            <!--ปุ่มลบ-->
-                            <a class="cart_quantity_delete"
-                                onclick="return confirm('คุณต้องการลบสินค้าออกจากตะกร้าหรือไม่ ?')"
-                                href="{% url 'removecart' item.product.id %}"><i class="fa fa-times"></i></a>
-                        </div>
+<div class="row">
+    {% for item in cart_item %}
+    <div class="col-lg-4">
+        <div class="{% cycle 'menu1' 'menu2' 'menu3' %}">
+            <div class="col">
+                <div class="card h-100">
+                    <div style="margin: 4px 4px 0px 4px;"><img src="{{item.product.image.url}}" class="card-img-top"
+                            alt="food"></div>
+                    <!--รูปภาพ-->
+                    <div class="card-body">
+                        <!--ชื่ออาหาร-->
+                        <h3 class="card-title">{{item.product.name}}</h3>
+                        <!--ราคาต่อชิ้น-->
+                        <h6 class="card-text">{{item.product.price}} บาท</h6>
+                        <!--จำนวน-->
+                        <h6 class="card-text">{{item.quantity}} ชิ้น</h6>
+                        <!--ราคา*จำนวน-->
+                        <h6 class="card-text">รวม {{item.sub_total}} บาท</h6>
+                        <!--ปุ่มลบ-->
+                        <a class="cart_quantity_delete"
+                            onclick="return confirm('คุณต้องการลบสินค้าออกจากตะกร้าหรือไม่ ?')"
+                            href="{% url 'removecart' item.product.id %}"><i class="fa fa-times"></i></a>
                     </div>
                 </div>
             </div>
         </div>
-        {% endfor %}
-    </div><br><br>
-    <div style="text-align: center; border:3px solid #DBCDAD;">
-        <!--ยอดรวม-->
-        <h2>รวมทั้งหมด</h2>
-        <h3>{{total}} บาท</h3>
-        </div><br><br><br><br>
+    </div>
+    {% endfor %}
+</div><br><br>
+<div style="text-align: center; border:3px solid #DBCDAD;">
+    <!--ยอดรวม-->
+    <h2>รวมทั้งหมด</h2>
+    <h3>{{total}} บาท</h3>
+</div><br><br><br><br>
 
 {% endblock %}

@@ -10,7 +10,6 @@
 </div>
 {% endif %}
 {% if not image_bg %}
-<!-- <div class="background"> -->
 <form action="add_image_main_process" method="post" enctype="multipart/form-data">
     <div class="center" id="suba">
         <div class="form-group" id="kob1" style="background-color: #A8BAA9; margin-left: 50px;">
@@ -27,9 +26,7 @@
         </div>
     </div>
 </form>
-<!-- </div> -->
 {% elif image_bg != None %}
-<!-- <div class="background"> -->
 <div class="form-pang1" style="background-color: #A8BAA9;">
     <form action="edit_image_main" method="post" enctype="multipart/form-data">
         <div class="center">
@@ -47,11 +44,9 @@
 </div>
 </form>
 </div>
-<!-- </div> -->
 {% endif %}
 
 {% if not image_promo %}
-<!-- <div class="background2"> -->
 <form action="add_recommend_process" method="post" enctype="multipart/form-data">
     <div class="center">
         <div class="form-group" id="kob2" style="background-color: #DBCDAD;">
@@ -87,9 +82,7 @@
             </div>
         </div>
 </form>
-<!-- </div> -->
 {% else %}
-<!-- <div class="background2"> -->
 <div class="form-pang2" style="background-color: #DBCDAD;">
     <form action="edit_recommend" method="post" enctype="multipart/form-data">
         <div class="center">
@@ -124,12 +117,10 @@
                     style="margin-top: 20px; margin-bottom: 20px;">
             </div>
         </div>
-    </form><br><br><br><br><br><br><br><br><br>
+    </form><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </div>
-<!-- </div> -->
 {%endif%}
 {% if not image_menu %}
-<!-- <div class="background3"> -->
 <form action="image_pagemenu_process" method="post" enctype="multipart/form-data">
     <div class="center">
         <div class="form-group" id="kob3" style="background-color: #A8BAA9;">
@@ -144,9 +135,7 @@
             </div>
         </div>
 </form>
-<!-- </div> -->
 {% else %}
-<!-- <div class="background3"> -->
 <div class="form-pang3" style="background-color: #A8BAA9;">
     <form action="edit_image_menu" method="post" enctype="multipart/form-data">
         <div class="center">
@@ -163,7 +152,6 @@
         </div>
     </form>
 </div>
-<!-- </div> -->
 {% endif %}
 
 {% endblock %}
