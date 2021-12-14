@@ -183,7 +183,7 @@ def cartdetail(request):
     except Exception as e:
         pass
 
-    return render(request, 'cartdetail.html', dict(total=total, counter=counter, cart_item=cart_item, id_cart=id_cart))
+    return render(request, 'cartdetail.html', dict(total=total, counter=counter, cart_item=cart_item))
     
 def removecart(request, product_id):
     cart = Cart.objects.get(cart_id=cartid(request))
@@ -250,3 +250,9 @@ def changetable(request, table_id):
     messages.info(request, 'complate')
     return redirect('/table')
 
+def success(request, product_id):
+    cart = Cart.objects.get(cart_id=cartid(request))
+    product = get_object_or_404(Menu, id=product_id)
+    cartitem = CartItem.objects.get(product=product, cart=cart)
+    cartitem.delete()
+    return redirect('/order')
