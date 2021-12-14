@@ -3,6 +3,6 @@
 {% block content%}
         {% for item in items %}
                 <h4>{{item.product.name}}</h4>
-                <a class="cart_quantity_delete"onclick="return confirm('ปรุงเมนูสำเร็จเรียบร้อย?')" href="{% url 'removecart' item.product.id %}"><i class="fa fa-times-circle"></i></a>
+                <a class="cart_quantity_delete"onclick="return confirm('ปรุงเมนูสำเร็จเรียบร้อย?')" href="{% url 'success' item.product.id %}"><i class="fa fa-times-circle"></i></a>
         {% endfor %}
 {% endblock %}

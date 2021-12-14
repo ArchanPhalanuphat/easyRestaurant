@@ -77,5 +77,4 @@ def table_user(request):
 def order(request):
     data = CartItem.objects.all()
     data2 = Cart.objects.all()
-    print(data, data2)
     return render(request, 'order.html', {'items':data, 'orders':data2})
