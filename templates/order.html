@@ -1,8 +1,10 @@
 {% extends 'layout.html'%}
 
 {% block content%}
+<h2 style="text-align: center; margin-top: 70px; color: #704E3D;">กำลังปรุงอาหาร</h2>
+<div class="center2">
         {% for item in items %}
-                <h4>{{item.product.name}}</h4>
-                <a class="cart_quantity_delete"onclick="return confirm('ปรุงเมนูสำเร็จเรียบร้อย?')" href="{% url 'success' item.product.id %}"><i class="fa fa-times-circle"></i></a>
+                <h4>{{item.product.name}}&emsp;<a class="cart_quantity_delete"onclick="return confirm('ปรุงเมนูสำเร็จเรียบร้อย?')" href="{% url 'success' item.product.id %}"><i class="fa fa-times-circle"></i></a></h4>
         {% endfor %}
+</div>
 {% endblock %}
