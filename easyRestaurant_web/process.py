@@ -121,7 +121,7 @@ def add_image_main_process(request):
         description = description
     )
     add_main.save()
-    messages.info(request, 'complate')
+    messages.info(request, 'complete')
     return redirect('/add_image_main')
 
 def add_image_pagemenu_process(request):
@@ -131,7 +131,7 @@ def add_image_pagemenu_process(request):
         image = image
     )
     add_main.save()
-    messages.info(request, 'complate')
+    messages.info(request, 'complete')
     return redirect('/add_image_main')
 
 def cartid(request):
@@ -203,7 +203,7 @@ def edit_image_main(request):
     new.description = request.POST.get('description')
     new.image = request.FILES['image']
     new.save()
-    messages.info(request, 'complate')
+    messages.info(request, 'complete')
     return redirect('/add_image_main')
 
 def edit_recommend(request):
@@ -221,14 +221,14 @@ def edit_recommend(request):
     new.price4 = request.POST.get('price4')
     new.image4 = request.FILES['image4']
     new.save()
-    messages.info(request, 'complate')
+    messages.info(request, 'complete')
     return redirect('/add_image_main')
 
 def edit_image_menu(request):
     new = get_object_or_404(image_pagemenu)
     new.image = request.FILES['image']
     new.save()
-    messages.info(request, 'complate')
+    messages.info(request, 'complete')
     return redirect('/add_image_main')
 
 def add_table(request):
@@ -247,7 +247,7 @@ def changetable(request, table_id):
     elif table.status == False:
         table.status = True
     table.save()
-    messages.info(request, 'complate')
+    messages.info(request, 'complete')
     return redirect('/table')
 
 def success(request, product_id):
