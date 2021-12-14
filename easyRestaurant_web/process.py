@@ -4,12 +4,12 @@ from django.db.models.aggregates import Count
 from django.http import HttpResponse, response
 from django.contrib.auth.models import User,auth
 from django.shortcuts import get_object_or_404, redirect, render
-from easyRestaurant_web.models import Cart, CartItem, Menu
+from easyRestaurant_web.models import Cart, CartItem, Menu, Order, OrderItem
 from easyRestaurant_web.models import image_promotion
 from easyRestaurant_web.models import image_pagemenu
 from easyRestaurant_web.models import image_main
 from easyRestaurant_web.models import Table
-from easyRestaurant_web.views import table
+from django.contrib.auth.decorators import login_required
 
 
 def register_process(request):
@@ -140,6 +140,7 @@ def cartid(request):
         cart = request.session.create()
     return cart
 
+@login_required(login_url='/login')
 def add_cart(request, menu_id):
     product = Menu.objects.get(id=menu_id)
     try:
@@ -167,20 +168,23 @@ def add_cart(request, menu_id):
     elif product.genre == "drink":
         return redirect('/menu_drink')
 
+
 def cartdetail(request):
     total = 0
     counter = 0
     cart_item = None
     try:
         cart = Cart.objects.get(cart_id=cartid(request))
+        id_cart = cart.id
         cart_item = CartItem.objects.filter(cart=cart)
         for item in cart_item:
             total += item.product.price*item.quantity
             counter += int(item.quantity)
     except Exception as e:
         pass
-    return render(request, 'cartdetail.html', dict(total=total, counter=counter, cart_item=cart_item))
 
+    return render(request, 'cartdetail.html', dict(total=total, counter=counter, cart_item=cart_item, id_cart=id_cart))
+    
 def removecart(request, product_id):
     cart = Cart.objects.get(cart_id=cartid(request))
     product = get_object_or_404(Menu, id=product_id)
@@ -245,3 +249,4 @@ def changetable(request, table_id):
     table.save()
     messages.info(request, 'complate')
     return redirect('/table')
+

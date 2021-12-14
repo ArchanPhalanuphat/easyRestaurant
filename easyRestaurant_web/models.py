@@ -50,4 +50,21 @@ class CartItem(models.Model):
 
 class Table(models.Model):
     status = models.BooleanField(default=True)
-    
+
+class Order(models.Model):
+    table = models.IntegerField(max_length=1000)
+    total = models.DecimalField(max_digits=8, decimal_places=2)
+    email = models.EmailField(max_length=250, blank=True)
+
+    def __str__(self):
+        return str(self.id)
+
+class OrderItem(models.Model):
+    product = models.CharField(max_length=250)
+    quantity = models.IntegerField()
+    price = models.DecimalField(max_digits=8, decimal_places=2)
+    order=models.ForeignKey(Order, on_delete=models.CASCADE)
+
+    def subtotal(self) :
+        return self.quantity*self.price
+

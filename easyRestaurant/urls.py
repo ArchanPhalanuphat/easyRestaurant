@@ -51,7 +51,8 @@ urlpatterns = [
     path('table', views.table),
     path('add_table', process.add_table, name="add_table"),
     path('changetable/<table_id>', process.changetable, name="changetable"),
-    path('table_user', views.table_user)
+    path('table_user', views.table_user),
+
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
