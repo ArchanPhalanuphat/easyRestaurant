@@ -98,7 +98,7 @@
         .form-group {
             width: 60vw;
             margin-left: 30px;
-            margin-top: 50px;
+            margin-top: 100px;
             /*background-color: #fff;
             width: 500px;
             justify-content: center;
@@ -263,7 +263,6 @@
             background-repeat: no-repeat;
             background-size: cover, contain;
             position: relative;
-            opacity: 0.78;
         }
 
         .center {
@@ -314,7 +313,16 @@
             height: 80vh;
             padding: auto;
             text-align: top center;
-
+        }
+        #kob3{
+            width: 30vw;
+            height: vh;
+            padding: auto;
+        }
+        #goobgoob{
+            background-color: #DBCDAD;
+            height: 65vh;
+            opacity: 0.78;
         }
 
 
@@ -382,7 +390,7 @@
             }
 
             footer {
-                width: 85%;
+                width: 100%;
             }
 
             .navbar.navbar-expand-lg.row {
@@ -438,9 +446,29 @@
                     max-width: 540px;
                 }
             }
-
-
         }
+        @media (max-width: 768px){
+            * {
+                padding: 0;
+                margin: 0;
+            }
+
+            #poom1{
+                height: 20vh;
+            }
+        }
+        @media (max-width: 480px){
+            *{
+                padding: 0;
+                margin: 0;
+            }
+
+            #hfooter {
+                width: 100vw;
+            }
+        }
+        
+
 
         .card h-100 {
             margin-bottom: 10px;
@@ -455,7 +483,7 @@
 
 <body>
     <!--หัวข้อ-->
-    <div class="container-fluid">
+    <div class="container-fluid" id="hfooter">
         <nav class="navbar navbar-expand-lg row" style="background-color:#C1AA8D; ">
             <div class="col-lg-4">
                 <div class="row">

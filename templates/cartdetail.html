@@ -4,6 +4,11 @@
 {% block content%}
 
 <h1 style="text-align: center; margin-top: 50px;">ตะกร้าสินค้า</h1>
+<div style="text-align: right; margin-right: 50px;">
+    <!--ยอดรวม-->
+    <h2>รวมทั้งหมด</h2>
+    <p>{{total}}</p>
+    </div>
 <!-- <div class="container"> -->
     <div class="row">
         {% for item in cart_item %}
@@ -35,9 +40,4 @@
         {% endfor %}
     </div>
 
-<div class="cart">
-<!--ยอดรวม-->
-<h2>รวมทั้งหมด</h2>
-<p>{{total}}</p>
-</div>
 {% endblock %}

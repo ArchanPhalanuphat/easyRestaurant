@@ -1,39 +1,42 @@
 {% extends 'layout.html'%}
 
 {% block content%}
-    {% for table in tables %}
-        {% if table.status == False %}
-        <h1 style="text-align: center; margin-top: 50px;">Table</h1>
-        <!-- <div class="container"> -->
-            <div class="row">
-            <div class="col-lg-4" style="width: 18rem;">
-                <div class="{% cycle 'menu1' 'menu1' 'menu1' %}">
+<h1 style="text-align: center; margin-top: 20px;">Table</h1>
+<div class="container">
+    <div class="row">
+        {% for table in tables %}
+
+
+        <div class="col-lg-4" style="width: 18rem;">
+            <div class="{% cycle 'menu1' 'menu1' 'menu1' %}">
                 <div class="col">
-                    <div class="card h-100"  style="width: 18rem;">
-                        <div style="margin: 4px 4px 0px 4px;"><img src="https://cdn.discordapp.com/attachments/881417596199649350/919961610339102760/emtry.jpg" class="card-img-top" alt="food"></div>
-                    <div class="card-body">
-                            <h4>โต๊ะที่{{table.id}}ไม่ว่าง</h4>
-                    </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        {%endif%}
-        {% if table.status == True %}
-        <div class="container">
-            <div class="row">
-            <div class="col-lg-4">
-                <div class="{% cycle 'menu1' 'menu1' 'menu1' %}">
-                <div class="col">
+                    {% if table.status == True %}
                     <div class="card h-100" style="width: 18rem;">
-                        <div style="margin: 4px 4px 0px 4px;"><img src="https://cdn.discordapp.com/attachments/881417596199649350/919961610699804722/full.jpg" class="card-img-top" alt="food"></div>
-                    <div class="card-body">
+                        <div style="margin: 4px 4px 0px 4px;"><img
+                                src="https://cdn.discordapp.com/attachments/881417596199649350/919961610699804722/full.jpg"
+                                class="card-img-top" alt="food"></div>
+
+                        <div class="card-body">
                             <h4>โต๊ะที่{{table.id}}ว่าง</h4>
+                        </div>
                     </div>
+                    {% elif table.status == False %}
+                    <div class="card h-100" style="width: 18rem;">
+                        <div style="margin: 4px 4px 0px 4px;"><img
+                                src="https://cdn.discordapp.com/attachments/881417596199649350/919961610339102760/emtry.jpg"
+                                class="card-img-top" alt="food"></div>
+
+                        <div class="card-body">
+                            <h4>โต๊ะที่{{table.id}}ไม่ว่าง</h4>
+                        </div>
                     </div>
+                    {% endif %}
                 </div>
             </div>
         </div>
-        {%endif%}
-    {% endfor %}
+
+        {% endfor %}
+    </div>
+</div>
+
 {% endblock %}
