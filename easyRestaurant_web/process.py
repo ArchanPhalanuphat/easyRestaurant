@@ -225,7 +225,7 @@ def edit_recommend(request):
     return redirect('/add_image_main')
 
 def edit_image_menu(request):
-    new = get_object_or_404(image_main)
+    new = get_object_or_404(image_pagemenu)
     new.image = request.FILES['image']
     new.save()
     messages.info(request, 'complate')
