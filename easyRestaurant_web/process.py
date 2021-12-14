@@ -26,7 +26,7 @@ def register_process(request):
         messages.info(request, 'username ถูกใช้ไปแล้ว')
         return redirect('/register')
     elif User.objects.filter(email=email).exists():
-        messages.info(request, 'Emialนี้ถูกใช้งานไปแล้ว')
+        messages.info(request, 'Emailนี้ถูกใช้งานไปแล้ว')
         return redirect('/register')
     else:
         user=User.objects.create_user(
