@@ -3,12 +3,7 @@
 
 {% block content%}
 
-<h1 style="text-align: center; margin-top: 50px;">ตะกร้าสินค้า</h1>
-<div style="text-align: right; margin-right: 50px;">
-    <!--ยอดรวม-->
-    <h2>รวมทั้งหมด</h2>
-    <p>{{total}}</p>
-    </div>
+<h1 style="text-align: center; margin-top: 50px; color: #704E3D;">ตะกร้าสินค้า</h1>
 <!-- <div class="container"> -->
     <div class="row">
         {% for item in cart_item %}
@@ -21,13 +16,13 @@
                         <!--รูปภาพ-->
                         <div class="card-body">
                             <!--ชื่ออาหาร-->
-                            <p class="card-title">{{item.product.name}}</p>
+                            <h3 class="card-title">{{item.product.name}}</h3>
                             <!--ราคาต่อชิ้น-->
-                            <p class="card-text">{{item.product.price}}</p>
+                            <h6 class="card-text">{{item.product.price}} บาท</h6>
                             <!--จำนวน-->
-                            <p class="card-text">{{item.quantity}}</p>
+                            <h6 class="card-text">{{item.quantity}} ชิ้น</h6>
                             <!--ราคา*จำนวน-->
-                            <p class="card-text">{{item.sub_total}}</p>
+                            <h6 class="card-text">รวม {{item.sub_total}} บาท</h6>
                             <!--ปุ่มลบ-->
                             <a class="cart_quantity_delete"
                                 onclick="return confirm('คุณต้องการลบสินค้าออกจากตะกร้าหรือไม่ ?')"
@@ -38,6 +33,11 @@
             </div>
         </div>
         {% endfor %}
-    </div>
+    </div><br><br>
+    <div style="text-align: center; border:3px solid #DBCDAD;">
+        <!--ยอดรวม-->
+        <h2>รวมทั้งหมด</h2>
+        <h3>{{total}} บาท</h3>
+        </div><br><br><br><br>
 
 {% endblock %}
